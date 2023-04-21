@@ -1,8 +1,17 @@
+import ExpenseItem from "./components/ExpenseItem";
+
 function App() {
   return (
-    <div>
-      <h2>Let's get started!</h2>
-      <p>some text</p>
+    <div className="container">
+
+      <div className="expense-item-list-container">
+        <ExpenseItem></ExpenseItem>
+      </div>
+      <div className="analist-container">
+        <div className="add-new"></div>
+        <div className="analist"></div>
+        <div className="budget"></div>
+      </div>
     </div>
   );
 }
