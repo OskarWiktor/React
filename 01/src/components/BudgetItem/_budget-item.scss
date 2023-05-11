@@ -1,0 +1,50 @@
+.budget-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 72px;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: rgba(11, 0, 39, 0.188);
+    margin: 4px 0px;
+    cursor: pointer;
+    .budget-item--icon {
+        background-color: $detail-color;
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        padding: 4px;
+        @media (max-width: 520px) {
+            width: 42px;
+            height: 42px;
+        }
+    }
+    .budget-item--text {
+        display: inline-flex;
+        width: 100%;
+        padding: 12px;
+        justify-content:space-between ;
+        .budget-text--title {
+            font: $text-normal;
+            color: $text-light-color;
+        }
+        .budget-text--money {
+            font: $text-normal;
+            color: $text-light-color;
+        }
+    }
+    .budget-edit {
+        .budget-edit--button{
+            letter-spacing: 2px;
+            font: $text-small;
+            color: $detail-color;
+            padding: 0px 12px;
+            cursor: pointer;
+            border-width:0px;
+            background-color:transparent;
+        }
+    }
+}
+.budget-item:last-child {
+    margin: 4px 0px 0px 0px;
+}

@@ -1,0 +1,25 @@
+.budget-container {
+  margin-top: 32px;
+  .budget-container--header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    .budget-container--title {
+      font: $text-big;
+      color: $text-light-color;
+    }
+    .budget-add-button {
+      background: $detail-color;
+      padding: 8px 16px;
+      border-radius: 12px;
+      box-shadow: $detail-shadow-color;
+      cursor: pointer;
+      .budget-add-button--text {
+        font: $text-small;
+        color: $text-light-color;
+      }
+    }
+  }
+}

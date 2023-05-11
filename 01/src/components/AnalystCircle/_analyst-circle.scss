@@ -1,0 +1,26 @@
+.analist-diagram {
+
+    .analist-diagram--header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 32px;
+        .analist-header--title {
+            font: $text-big;
+            color: $text-light-color;
+        }
+    }
+    .analist-circle--container {
+        width: 100%;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .analist-circle {
+            width: 200px;
+            height: 200px;
+            background-color: $detail-color;
+            border-radius: 100%;
+            box-shadow:  $detail-shadow-color;
+        }
+    }
+}

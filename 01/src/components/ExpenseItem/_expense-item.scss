@@ -1,0 +1,131 @@
+.expense-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: rgba(11, 0, 39, 0.188);
+  margin: 4px 0px;
+  .expense-item--left-items {
+    display: flex;
+    .expense-item--icon {
+      display: inline-flex;
+      background-color: $detail-color;
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      padding: 6px;
+      @media (max-width: 520px) {
+        width: 42px;
+        height: 42px;
+    }
+    }
+    .expense-text--container {
+      .expense-text {
+        display: inline-flex;
+        padding: 0px 6px;
+        .expense-text--title {
+          font: $text-small;
+          color: $text-light-color;
+          padding: 0px 6px;
+        }
+        .expense-text--data {
+          font: $text-normal;
+          color: rgb(149, 149, 149);
+          padding: 0px 6px;
+          @media (max-width: 520px) {
+              display: none;
+          }
+          
+        }
+        .expense-edit {
+          .expense-edit--button {
+            letter-spacing: 2px;
+            font: $text-small;
+            color: $detail-color;
+            padding: 0px 12px;
+            cursor: pointer;
+            border-width:0px;
+            background-color:transparent;
+          }
+        }
+      }
+      .expense-budget {
+        display: flex;
+        .expense-budget--text {
+          font: $text-small;
+          color: rgb(149, 149, 149);
+          padding: 0px 12px;
+        }
+      }
+    }
+  }
+  .expense-item--right-items {
+    .expense-item--money {
+      text-align: right;
+      font: $text-normal;
+      color: $text-light-color;
+    }
+    .expense-delate {
+      .expense-delate--button {
+        text-align: right;
+        font: $text-small;
+        color: rgb(255, 94, 94);
+        cursor: pointer;
+      }
+    }
+  }
+  .edit-expense-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(100dvw - 10dvw, 400px);
+    background-color: rgba(32, 33, 59, 0.982);
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    .edit-expense-modal--container{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        .edit-expense-modal--title {
+            font: $text-big;
+            color: $text-light-color;
+            padding-bottom: 12px;
+        }
+        .edit-expense-modal--label {
+            font: $text-normal;
+            color: $text-light-color;
+            padding-bottom: 12px;
+            .edit-expense-modal--input {
+                font: $text-small;
+                color: $text-light-color;
+                padding: 6px 8px;
+                margin: 0px 12px;
+                width: 220px;
+                background-color: rgba(234, 239, 244, 0.11);
+                border-width: 0px 0px 1px;
+                border-color: $detail-color;
+            }
+            .edit-expense-modal--input:focus {
+                color: $detail-color;
+                outline: none;
+                background-color: rgba(234, 239, 244, 0.209);
+            }
+        }
+        .edit-expense-modal--save {
+            font: $text-small;
+            color: $text-light-color;
+            padding: 6px 8px;
+            width: 120px;
+            background-color: $detail-color;
+            border-width: 1px;
+            border-color: $detail-color;
+        }
+
+    }
+  }
+}

@@ -1,0 +1,9 @@
+.left-column {
+    background-color: rgba(251, 251, 251, 0.079);
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow:  10px 10px 30px #00001f7a;
+    @media (max-width: 780px) {
+        padding: 12px;
+      }
+}
