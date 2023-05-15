@@ -19,7 +19,7 @@
       @media (max-width: 520px) {
         width: 42px;
         height: 42px;
-    }
+      }
     }
     .expense-text--container {
       .expense-text {
@@ -35,20 +35,17 @@
           color: rgb(149, 149, 149);
           padding: 0px 6px;
           @media (max-width: 520px) {
-              display: none;
+            display: none;
           }
-          
         }
-        .expense-edit {
-          .expense-edit--button {
-            letter-spacing: 2px;
-            font: $text-small;
-            color: $detail-color;
-            padding: 0px 12px;
-            cursor: pointer;
-            border-width:0px;
-            background-color:transparent;
-          }
+        .expense-edit--button {
+          letter-spacing: 2px;
+          font: $text-small;
+          color: $detail-color;
+          padding: 0px 12px;
+          cursor: pointer;
+          border-width: 0px;
+          background-color: transparent;
         }
       }
       .expense-budget {
@@ -67,13 +64,13 @@
       font: $text-normal;
       color: $text-light-color;
     }
-    .expense-delate {
-      .expense-delate--button {
-        text-align: right;
-        font: $text-small;
-        color: rgb(255, 94, 94);
-        cursor: pointer;
-      }
+    .expense-delate--button {
+      text-align: right;
+      font: $text-small;
+      color: rgb(255, 94, 94);
+      cursor: pointer;
+      border-width: 0px;
+      background-color: transparent;
     }
   }
   .edit-expense-modal {
@@ -87,45 +84,44 @@
     border-radius: 8px;
     box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
     z-index: 10;
-    .edit-expense-modal--container{
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        .edit-expense-modal--title {
-            font: $text-big;
-            color: $text-light-color;
-            padding-bottom: 12px;
+    .edit-expense-modal--container {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      .edit-expense-modal--title {
+        font: $text-big;
+        color: $text-light-color;
+        padding-bottom: 12px;
+      }
+      .edit-expense-modal--label {
+        font: $text-normal;
+        color: $text-light-color;
+        padding-bottom: 12px;
+        .edit-expense-modal--input {
+          font: $text-small;
+          color: $text-light-color;
+          padding: 6px 8px;
+          margin: 0px 12px;
+          width: 220px;
+          background-color: rgba(234, 239, 244, 0.11);
+          border-width: 0px 0px 1px;
+          border-color: $detail-color;
         }
-        .edit-expense-modal--label {
-            font: $text-normal;
-            color: $text-light-color;
-            padding-bottom: 12px;
-            .edit-expense-modal--input {
-                font: $text-small;
-                color: $text-light-color;
-                padding: 6px 8px;
-                margin: 0px 12px;
-                width: 220px;
-                background-color: rgba(234, 239, 244, 0.11);
-                border-width: 0px 0px 1px;
-                border-color: $detail-color;
-            }
-            .edit-expense-modal--input:focus {
-                color: $detail-color;
-                outline: none;
-                background-color: rgba(234, 239, 244, 0.209);
-            }
+        .edit-expense-modal--input:focus {
+          color: $detail-color;
+          outline: none;
+          background-color: rgba(234, 239, 244, 0.209);
         }
-        .edit-expense-modal--save {
-            font: $text-small;
-            color: $text-light-color;
-            padding: 6px 8px;
-            width: 120px;
-            background-color: $detail-color;
-            border-width: 1px;
-            border-color: $detail-color;
-        }
-
+      }
+      .edit-expense-modal--save {
+        font: $text-small;
+        color: $text-light-color;
+        padding: 6px 8px;
+        width: 120px;
+        background-color: $detail-color;
+        border-width: 1px;
+        border-color: $detail-color;
+      }
     }
   }
 }

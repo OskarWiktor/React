@@ -6,6 +6,7 @@ function ExpenseItem() {
   const [expenseTitle, setExpenseTitle] = useState("Title");
   const [expenseMoney, setExpenseMoney] = useState(400);
   const [expenseDate, setExpenseDate] = useState(new Date());
+  const expenseBudget = "Podróże";
   const [formattedDate, setFormattedDate] = useState(
     expenseDate.toLocaleDateString("pl-PL", {
       year: "numeric",
@@ -25,7 +26,7 @@ function ExpenseItem() {
   const handleExpenseMoneyChange = (e) => {
     setExpenseMoney(e.target.value);
   };
-  const handleExpenseDateChange = (e) => { 
+  const handleExpenseDateChange = (e) => {
     setExpenseDate(new Date(e.target.value));
   };
 
@@ -47,25 +48,18 @@ function ExpenseItem() {
           <div className="expense-text">
             <h3 className="expense-text--title">{expenseTitle}</h3>
             <p className="expense-text--data">{formattedDate}</p>
-            <div className="expense-edit">
-              <button
-                className="expense-edit--button"
-                onClick={handleEditClick}
-              >
-                ...
-              </button>
-            </div>
+            <button className="expense-edit--button" onClick={handleEditClick}>
+              ...
+            </button>
           </div>
           <div className="expense-budget">
-            <p className="expense-budget--text">podróże</p>
+            <p className="expense-budget--text">{expenseBudget}</p>
           </div>
         </div>
       </div>
       <div className="expense-item--right-items">
         <p className="expense-item--money">{expenseMoney} zł</p>
-        <div className="expense-delate">
-          <p className="expense-delate--button">usuń</p>
-        </div>
+        <button className="expense-delate--button">usuń</button>
       </div>
       {isModalOpen && (
         <div className="edit-expense-modal">

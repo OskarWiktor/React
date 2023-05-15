@@ -250,7 +250,7 @@ body #root .container .left-column {
     display: none;
   }
 }
-.expense-item .expense-item--left-items .expense-text--container .expense-text .expense-edit .expense-edit--button {
+.expense-item .expense-item--left-items .expense-text--container .expense-text .expense-edit--button {
   letter-spacing: 2px;
   font: calc(0.8em + 0.1vw) "Noto Sans JP", sans-serif;
   color: rgba(0, 212, 99, 0.8156862745);
@@ -272,11 +272,13 @@ body #root .container .left-column {
   font: calc(0.8em + 0.2vw) "Noto Sans JP", sans-serif;
   color: #eeeeee;
 }
-.expense-item .expense-item--right-items .expense-delate .expense-delate--button {
+.expense-item .expense-item--right-items .expense-delate--button {
   text-align: right;
   font: calc(0.8em + 0.1vw) "Noto Sans JP", sans-serif;
   color: rgb(255, 94, 94);
   cursor: pointer;
+  border-width: 0px;
+  background-color: transparent;
 }
 .expense-item .edit-expense-modal {
   position: absolute;

@@ -1,6 +1,8 @@
 import { ReactComponent as AirplaneTilt } from "../../assets/budget-icons/airplane-tilt.svg";
 
 function BudgetItem() {
+const budgetTitle = "Title";
+
   return (
     <div className="budget-item">
       <AirplaneTilt className="budget-item--icon" />
