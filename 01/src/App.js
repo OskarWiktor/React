@@ -1,26 +1,19 @@
-import React, { useState } from "react";
-
-import Header from "./components/Header/Header";
-import AddButton from "./components/AddButton/AddButton";
-import AnalistCircle from "./components/AnalystCircle/AnalystCircle";
-import BudgetMenager from "./components/BudgetMenager/BudgetMenager";
-import ExpenseItemsList from "./components/ExpenseItemsList/ExpenseItemsList";
+import AnalistCircle from "./components/03-organisms/AnalystCircle/AnalystCircle";
+import Header from "./components/03-organisms/Header/Header";
+import BudgetMenager from "./components/03-organisms/BudgetMenager/BudgetMenager";
+import ExpenseItemsList from "./components/03-organisms/ExpenseItemsList/ExpenseItemsList";
 
 function App() {
   return (
     <div className="container">
-      <Header></Header>
-
-      <div className="left-column">
-        <AddButton />
+      <Header />
+      <main className="left-column">
         <ExpenseItemsList />
-      </div>
-
-      <div className="right-column">
-        <AnalistCircle></AnalistCircle>
-        <BudgetMenager></BudgetMenager>
-        <div className="budget"></div>
-      </div>
+      </main>
+      <aside className="right-column">
+        <AnalistCircle />
+        <BudgetMenager />
+      </aside>
     </div>
   );
 }
