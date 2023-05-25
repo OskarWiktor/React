@@ -42,6 +42,7 @@ function AddNewExpense({onSave, onCancel}) {
       <label>
         Title:
         <ModalInput
+          required
           type="text"
           maxLength="18"
           value={title}
@@ -51,6 +52,7 @@ function AddNewExpense({onSave, onCancel}) {
       <label>
         Money:
         <ModalInput
+          required
           type="number"
           pattern="[0-9]*"
           maxLength="6"
@@ -60,7 +62,12 @@ function AddNewExpense({onSave, onCancel}) {
       </label>
       <label>
         Date:
-        <ModalInput type="date" value={date} onChange={handleDateChange} />
+        <ModalInput
+          required
+          type="date"
+          value={date}
+          onChange={handleDateChange}
+        />
       </label>
       <div>
         <SaveButton onClick={handleSaveClick}>Save</SaveButton>

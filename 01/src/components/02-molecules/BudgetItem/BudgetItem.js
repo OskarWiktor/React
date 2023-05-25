@@ -13,6 +13,7 @@ function BudgetItem(props) {
   //budget data
   const [budgetTitle, setBudgetTitle] = useState(props.title);
   const [budgetMoney, setBudgetMoney] = useState(props.money);
+  
   // modal window
   const [isModalOpen, setIsModalOpen] = useState(false);
 
