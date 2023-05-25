@@ -6,7 +6,7 @@
     padding: 12px;
     border-radius: 8px;
     background-color: rgba(11, 0, 39, 0.188);
-    margin: 4px 0px;
+    margin: 6px 0px;
     .budget-item--icon {
         background-color: $detail-color;
         width: 48px;
@@ -21,13 +21,13 @@
     .budget-items {
         display: inline-flex;
         width: 100%;
-        padding: 12px;
+        padding: 12px 0px 12px 12px;
         justify-content:space-between ;
         .budget-items--left {
             display: inline-flex;
             margin: auto 0px;
             .budget-title {
-                font: $text-normal;
+                font: $text-small;
                 color: $text-light-color;
             }
         }
@@ -35,7 +35,7 @@
             display: flex;
             flex-direction: column;
             .budget-money {
-                font: $text-normal;
+                font: $text-small;
                 color: $text-light-color;
             }
         }

@@ -1,0 +1,33 @@
+.modal-window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(100dvw - 10dvw, 400px);
+  background-color: rgba(32, 33, 59, 0.982);
+  padding: 32px;
+  border-radius: 8px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  .modal-window--container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    h3 {
+      position: absolute;
+      font: $text-big;
+      color: $text-light-color;
+      span {
+        color: $detail-color;
+        font-style: italic;
+      }
+    }
+    label {
+      display: flex;
+      flex-direction: column;
+      font: $text-normal;
+      color: $text-light-color;
+      padding: 8px;
+    }
+  }
+}

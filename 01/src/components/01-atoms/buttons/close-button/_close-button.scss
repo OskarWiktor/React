@@ -1,0 +1,16 @@
+.close-button--container{
+    position: relative;
+    top: -6%;
+    left: 50%;
+    transform: translate(6%, -50%);
+    .close-button {
+        width: 32px;
+        height: 32px;
+        background-color: rgba(194, 196, 253, 0.246);
+        border: 0px;
+        border-radius: 18px;
+        font: $text-small;
+        color: $text-light-color;
+        cursor: pointer;
+    }
+}

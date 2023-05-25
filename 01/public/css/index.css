@@ -125,6 +125,50 @@ body #root .container .left-column {
   background-color: transparent;
 }
 
+.save-button {
+  font: calc(0.8em + 0.1vw) "Noto Sans JP", sans-serif;
+  color: #eeeeee;
+  padding: 6px 8px;
+  margin-top: 8px;
+  width: 120px;
+  background-color: rgba(0, 212, 99, 0.8156862745);
+  border-width: 1px;
+  border-color: rgba(0, 212, 99, 0.8156862745);
+}
+
+.close-button--container {
+  position: relative;
+  top: -6%;
+  left: 50%;
+  transform: translate(6%, -50%);
+}
+.close-button--container .close-button {
+  width: 32px;
+  height: 32px;
+  background-color: rgba(194, 196, 253, 0.246);
+  border: 0px;
+  border-radius: 18px;
+  font: calc(0.8em + 0.1vw) "Noto Sans JP", sans-serif;
+  color: #eeeeee;
+  cursor: pointer;
+}
+
+.modal-input {
+  font: calc(0.8em + 0.1vw) "Noto Sans JP", sans-serif;
+  color: #eeeeee;
+  padding: 6px 8px;
+  width: 220px;
+  background-color: rgba(234, 239, 244, 0.11);
+  border-width: 0px 0px 1px;
+  border-color: rgba(0, 212, 99, 0.8156862745);
+}
+
+.modal-input:focus {
+  color: rgba(0, 212, 99, 0.8156862745);
+  outline: none;
+  background-color: rgba(234, 239, 244, 0.209);
+}
+
 .budget-item--container {
   display: flex;
   align-items: center;
@@ -133,7 +177,7 @@ body #root .container .left-column {
   padding: 12px;
   border-radius: 8px;
   background-color: rgba(11, 0, 39, 0.188);
-  margin: 4px 0px;
+  margin: 6px 0px;
 }
 .budget-item--container .budget-item--icon {
   background-color: rgba(0, 212, 99, 0.8156862745);
@@ -151,7 +195,7 @@ body #root .container .left-column {
 .budget-item--container .budget-items {
   display: inline-flex;
   width: 100%;
-  padding: 12px;
+  padding: 12px 0px 12px 12px;
   justify-content: space-between;
 }
 .budget-item--container .budget-items .budget-items--left {
@@ -159,7 +203,7 @@ body #root .container .left-column {
   margin: auto 0px;
 }
 .budget-item--container .budget-items .budget-items--left .budget-title {
-  font: calc(0.8em + 0.2vw) "Noto Sans JP", sans-serif;
+  font: calc(0.8em + 0.1vw) "Noto Sans JP", sans-serif;
   color: #eeeeee;
 }
 .budget-item--container .budget-items .budget-items--right {
@@ -167,7 +211,7 @@ body #root .container .left-column {
   flex-direction: column;
 }
 .budget-item--container .budget-items .budget-items--right .budget-money {
-  font: calc(0.8em + 0.2vw) "Noto Sans JP", sans-serif;
+  font: calc(0.8em + 0.1vw) "Noto Sans JP", sans-serif;
   color: #eeeeee;
 }
 
@@ -183,7 +227,7 @@ body #root .container .left-column {
   padding: 12px;
   border-radius: 8px;
   background-color: rgba(11, 0, 39, 0.188);
-  margin: 4px 0px;
+  margin: 6px 0px;
 }
 .expense-item .expense-item--left-items {
   display: flex;
@@ -209,10 +253,10 @@ body #root .container .left-column {
 .expense-item .expense-item--left-items .expense-text--container .expense-text .expense-text--title {
   font: calc(0.8em + 0.1vw) "Noto Sans JP", sans-serif;
   color: #eeeeee;
-  padding: 0px 6px;
+  padding: 0px 0px 0px 6px;
 }
 .expense-item .expense-item--left-items .expense-text--container .expense-text .expense-text--data {
-  font: calc(0.8em + 0.2vw) "Noto Sans JP", sans-serif;
+  font: calc(0.8em + 0.1vw) "Noto Sans JP", sans-serif;
   color: rgb(149, 149, 149);
   padding: 0px 6px;
 }
@@ -237,7 +281,8 @@ body #root .container .left-column {
   font: calc(0.8em + 0.2vw) "Noto Sans JP", sans-serif;
   color: #eeeeee;
 }
-.expense-item .edit-expense-modal {
+
+.modal-window {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -249,48 +294,26 @@ body #root .container .left-column {
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
   z-index: 10;
 }
-.expense-item .edit-expense-modal .edit-expense-modal--container {
+.modal-window .modal-window--container {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-.expense-item .edit-expense-modal .edit-expense-modal--container .edit-expense-modal--title {
+.modal-window .modal-window--container h3 {
+  position: absolute;
   font: calc(0.8em + 0.4vw) "Noto Sans JP", sans-serif;
   color: #eeeeee;
-  padding-bottom: 12px;
 }
-.expense-item .edit-expense-modal .edit-expense-modal--container .edit-expense-modal--title span {
+.modal-window .modal-window--container h3 span {
   color: rgba(0, 212, 99, 0.8156862745);
   font-style: italic;
 }
-.expense-item .edit-expense-modal .edit-expense-modal--container .edit-expense-modal--label {
+.modal-window .modal-window--container label {
+  display: flex;
+  flex-direction: column;
   font: calc(0.8em + 0.2vw) "Noto Sans JP", sans-serif;
   color: #eeeeee;
-  padding-bottom: 12px;
-}
-.expense-item .edit-expense-modal .edit-expense-modal--container .edit-expense-modal--label .edit-expense-modal--input {
-  font: calc(0.8em + 0.1vw) "Noto Sans JP", sans-serif;
-  color: #eeeeee;
-  padding: 6px 8px;
-  margin: 0px 12px;
-  width: 220px;
-  background-color: rgba(234, 239, 244, 0.11);
-  border-width: 0px 0px 1px;
-  border-color: rgba(0, 212, 99, 0.8156862745);
-}
-.expense-item .edit-expense-modal .edit-expense-modal--container .edit-expense-modal--label .edit-expense-modal--input:focus {
-  color: rgba(0, 212, 99, 0.8156862745);
-  outline: none;
-  background-color: rgba(234, 239, 244, 0.209);
-}
-.expense-item .edit-expense-modal .edit-expense-modal--container .edit-expense-modal--save {
-  font: calc(0.8em + 0.1vw) "Noto Sans JP", sans-serif;
-  color: #eeeeee;
-  padding: 6px 8px;
-  width: 120px;
-  background-color: rgba(0, 212, 99, 0.8156862745);
-  border-width: 1px;
-  border-color: rgba(0, 212, 99, 0.8156862745);
+  padding: 8px;
 }
 
 .analist-diagram .analist-diagram--header {
@@ -325,7 +348,7 @@ body #root .container .left-column {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
 }
 .budget-container .budget-container--header .budget-container--title {
   font: calc(0.8em + 0.4vw) "Noto Sans JP", sans-serif;
@@ -347,7 +370,7 @@ body #root .container .left-column {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
 }
 .expenses-container .expenses-header .expenses-header--title {
   font: calc(0.8em + 0.4vw) "Noto Sans JP", sans-serif;

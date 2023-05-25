@@ -14,8 +14,14 @@
 @import "../components/01-atoms/buttons/add-button/add-button";
 @import "../components/01-atoms/buttons/edit-button/edit-button";
 @import "../components/01-atoms/buttons/delete-button/delete-button";
+@import "../components/01-atoms/buttons/save-button/save-button";
+@import "../components/01-atoms/buttons/close-button/close-button";
+
+@import "../components/01-atoms/inputs/modal-input/modal-input";
 @import "../components/02-molecules/BudgetItem/budget-item";
 @import "../components/02-molecules/ExpenseItem/expense-item";
+@import "../components/02-molecules/ModalWindow/modal-window";
+
 @import "../components/03-organisms/AnalystCircle/analyst-circle";
 @import "../components/03-organisms/BudgetMenager/budget-menager";
 @import "../components/03-organisms/ExpenseItemsList/expense-items-list";
