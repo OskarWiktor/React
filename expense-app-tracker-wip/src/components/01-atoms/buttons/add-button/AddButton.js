@@ -1,6 +1,4 @@
 import React from "react";
-import PropTypes from 'prop-types';
-
 
 function AddButton({onClick, children}) {
   return (
@@ -9,11 +7,5 @@ function AddButton({onClick, children}) {
     </button>
   );
 }
-
-AddButton.propTypes = {
-  onClick: PropTypes.func,
-  children: PropTypes.node.isRequired,
-};
-
 
 export default AddButton;

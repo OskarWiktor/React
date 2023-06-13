@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 function ModalWindow({children}) {
   return (
@@ -11,7 +10,4 @@ function ModalWindow({children}) {
   );
 }
 
-ModalWindow.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 export default ModalWindow;

@@ -1,6 +1,4 @@
 import React from "react";
-import PropTypes from 'prop-types';
-
 
 function DeleteButton({onClick}) {
   return (
@@ -9,10 +7,5 @@ function DeleteButton({onClick}) {
     </button>
   );
 }
-
-DeleteButton.propTypes = {
-  onClick: PropTypes.func,
-};
-
 
 export default DeleteButton;

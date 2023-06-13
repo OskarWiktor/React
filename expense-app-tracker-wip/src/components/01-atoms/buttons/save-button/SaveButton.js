@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 function SaveButton({onClick}) {
   return (
@@ -8,9 +7,5 @@ function SaveButton({onClick}) {
     </button>
   );
 }
-
-SaveButton.propTypes = {
-  onClick: PropTypes.func,
-};
 
 export default SaveButton;
