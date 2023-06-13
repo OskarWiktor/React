@@ -14,6 +14,7 @@ function ExpenseItem(props) {
   const [expenseTitle, setExpenseTitle] = useState(props.title);
   const [expenseMoney, setExpenseMoney] = useState(props.money);
   const [expenseDate, setExpenseDate] = useState(new Date(props.date));
+  const expenseId = useState(props.key)
   const expenseBudget = "Podróże";
 
   //modal window
@@ -30,13 +31,15 @@ function ExpenseItem(props) {
   const handleExpenseTitleChange = (e) => {
     setExpenseTitle(e.target.value);
   };
-
   const handleExpenseMoneyChange = (e) => {
     setExpenseMoney(e.target.value);
   };
-
   const handleExpenseDateChange = (e) => {
     setExpenseDate(new Date(e.target.value));
+  };
+
+  const handleDeleteClick = () => {
+    props.handleDeleteClick(expenseId);
   };
 
   return (
@@ -64,8 +67,9 @@ function ExpenseItem(props) {
 
       <div className="expense-item--right-items">
         <p className="expense-item--money">{expenseMoney} zł</p>
-        <DeleteButton />
+        <DeleteButton onClick={() => handleDeleteClick(expenseId)}/>
       </div>
+
       {isModalOpen && (
         <ModalWindow>
           <CloseButton onClick={() => setIsModalOpen(false)} />

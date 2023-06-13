@@ -6,20 +6,20 @@ import AddNewExpense from "../../02-molecules/AddNewExpense/AddNewExpense"
 function ExpenseItemsList() {
   const expensesDummyData = [
     {
-      id: "e1",
+      id: "1",
       title: "Zakupy spożywcze",
       money: "378",
       date: new Date(2023, 4, 19),
     },
-    {id: "e2", title: "Paliwo", money: "242", date: new Date(2023, 4, 1)},
+    {id: "2", title: "Paliwo", money: "242", date: new Date(2023, 4, 1)},
     {
-      id: "e3",
+      id: "3",
       title: "Jedzenie dla kota",
       money: "79",
       date: new Date(2023, 4, 11),
     },
     {
-      id: "e4",
+      id: "4",
       title: "Nowy telefon",
       money: "1200",
       date: new Date(2023, 2, 12),
@@ -38,6 +38,11 @@ function ExpenseItemsList() {
     setIsModalOpen(false);
   };
 
+  const handleDeleteClick = (id) => {
+    const newExpenses = expenses.filter(expense => expense.id !== id)
+    setExpenses(newExpenses)
+  }
+
   return (
     <section className="expenses-container">
       <header className="expenses-header">
@@ -51,6 +56,7 @@ function ExpenseItemsList() {
           title={expense.title}
           money={expense.money}
           date={expense.date}
+          handleDeleteClick={() => handleDeleteClick(expense.id)}
         />
       ))}
 
