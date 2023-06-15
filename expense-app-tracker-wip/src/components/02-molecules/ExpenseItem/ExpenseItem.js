@@ -1,5 +1,5 @@
-import {useState} from "react";
-import {ReactComponent as Taxi} from "../../../assets/expence-item-icons/taxi.svg";
+import { useState } from "react";
+import { ReactComponent as Taxi } from "../../../assets/expence-item-icons/taxi.svg";
 
 import EditButton from "../../01-atoms/buttons/edit-button/EditButton";
 import DeleteButton from "../../01-atoms/buttons/delete-button/DeleteButton";
@@ -14,28 +14,39 @@ function ExpenseItem(props) {
   const [expenseTitle, setExpenseTitle] = useState(props.title);
   const [expenseMoney, setExpenseMoney] = useState(props.money);
   const [expenseDate, setExpenseDate] = useState(new Date(props.date));
-  const expenseId = useState(props.key)
+  const expenseId = useState(props.key);
   const expenseBudget = "Podróże";
 
-  //modal window
+  // modal window
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [tempExpenseTitle, setTempExpenseTitle] = useState("");
+  const [tempExpenseMoney, setTempExpenseMoney] = useState("");
+  const [tempExpenseDate, setTempExpenseDate] = useState("");
 
   const handleEditClick = () => {
     setIsModalOpen(true);
-  };
-  const handleSaveClick = () => {
-    setIsModalOpen(false);
+    setTempExpenseTitle(expenseTitle);
+    setTempExpenseMoney(expenseMoney);
+    setTempExpenseDate(expenseDate.toISOString().split("T")[0]);
   };
 
-  //edit option
+  const handleSaveClick = () => {
+    setIsModalOpen(false);
+    setExpenseTitle(tempExpenseTitle);
+    setExpenseMoney(tempExpenseMoney);
+    setExpenseDate(new Date(tempExpenseDate));
+  };
+
   const handleExpenseTitleChange = (e) => {
-    setExpenseTitle(e.target.value);
+    setTempExpenseTitle(e.target.value);
   };
+
   const handleExpenseMoneyChange = (e) => {
-    setExpenseMoney(e.target.value);
+    setTempExpenseMoney(e.target.value);
   };
+
   const handleExpenseDateChange = (e) => {
-    setExpenseDate(new Date(e.target.value));
+    setTempExpenseDate(e.target.value);
   };
 
   const handleDeleteClick = () => {
@@ -67,7 +78,7 @@ function ExpenseItem(props) {
 
       <div className="expense-item--right-items">
         <p className="expense-item--money">{expenseMoney} zł</p>
-        <DeleteButton onClick={() => handleDeleteClick(expenseId)}/>
+        <DeleteButton onClick={() => handleDeleteClick(expenseId)} />
       </div>
 
       {isModalOpen && (
@@ -81,7 +92,7 @@ function ExpenseItem(props) {
             <ModalInput
               type="text"
               maxLength="18"
-              value={expenseTitle}
+              value={tempExpenseTitle}
               onChange={handleExpenseTitleChange}
             />
           </label>
@@ -91,7 +102,7 @@ function ExpenseItem(props) {
               type="number"
               pattern="[0-9]*"
               maxLength="6"
-              value={expenseMoney}
+              value={tempExpenseMoney}
               onChange={handleExpenseMoneyChange}
             />
           </label>
@@ -99,7 +110,7 @@ function ExpenseItem(props) {
             Date:
             <ModalInput
               type="date"
-              value={expenseDate.toISOString().split("T")[0]}
+              value={tempExpenseDate}
               onChange={handleExpenseDateChange}
             />
           </label>

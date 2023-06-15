@@ -6,10 +6,6 @@
 @import "base/colors";
 @import "base/base";
 
-// main 
-@import "components/left-column";
-@import "components/right-column";
-
 // components
 @import "../components/01-atoms/buttons/add-button/add-button";
 @import "../components/01-atoms/buttons/edit-button/edit-button";
@@ -26,7 +22,3 @@
 @import "../components/03-organisms/BudgetMenager/budget-menager";
 @import "../components/03-organisms/ExpenseItemsList/expense-items-list";
 @import "../components/03-organisms/Header/header";
-
-// theme
-@import "theme/light-theme";
-@import "theme/dark-theme";
