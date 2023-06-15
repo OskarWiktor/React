@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans JP", sans-serif;
+}
+* body {
+  margin: 0;
+}
+* body ol, * body ul {
+  list-style: none;
+}
+* body h1, * body h2, * body h3, * body h4, * body h5, * body h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+* body address, * body caption, * body cite, * body code, * body dfn, * body em, * body strong, * body th, * body var {
+  font-style: normal;
+  font-weight: normal;
+}
+* body img, * body picture, * body svg, * body video {
+  display: block;
+  max-width: 100%;
+}
