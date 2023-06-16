@@ -1,0 +1,31 @@
+.navbar {
+    background-color: black;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    transition-timing-function: ease-in;
+    transition: 0.1s;
+    .navbar--wraper {
+        @include wraper;
+        justify-content: space-between;
+        .navbar__logo {
+            .navbar__logo--link {
+                color: $accent-color;
+                font: 56px 'netflix-font';
+            }
+        }
+        .navbar__nav {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .navbar__nav--ul {
+                display: flex;
+                flex-direction: row;
+                .navbar__nav--li {
+                    font: $text-normal;
+                    padding: 0px 16px;
+                }
+            }
+        }
+    }
+}

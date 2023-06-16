@@ -1,8 +1,9 @@
+import Navbar from "./components/organisms/navbar/navbar";
 
 function App() {
   return (
     <div className="App">
-      <h1>NETLIX</h1>
+      <Navbar />
     </div>
   );
 }

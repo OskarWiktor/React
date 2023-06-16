@@ -1,11 +1,17 @@
 // base
-@import "base/normalize";
-@import "base/typography";
-@import "base/colors";
-@import "base/base";
+@import "abstract/normalize";
+@import "abstract/typography";
+@import "abstract/colors";
+@import "abstract/base";
+@import 'abstract/mixin';
+
+//organisms
+@import "../components/organisms/navbar/navbar";
 
 body {
     background-color: rgb(40, 40, 40);
     line-height: 1.5;
-    color: rgb(224, 224, 224);
+    h1,h2,h3,h4,h5,h6,a,p {
+        color: $almost-white;
+    }
 }
