@@ -2,7 +2,7 @@
 function App() {
   return (
     <div className="App">
-      <h1>NETFLIX</h1>
+      <h1>NETLIX</h1>
     </div>
   );
 }

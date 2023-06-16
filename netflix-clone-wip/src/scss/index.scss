@@ -1,0 +1,11 @@
+// base
+@import "base/normalize";
+@import "base/typography";
+@import "base/colors";
+@import "base/base";
+
+body {
+    background-color: rgb(40, 40, 40);
+    line-height: 1.5;
+    color: rgb(224, 224, 224);
+}
