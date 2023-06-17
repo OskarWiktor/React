@@ -13,6 +13,7 @@
 * body h1, * body h2, * body h3, * body h4, * body h5, * body h6 {
   font-size: 100%;
   font-weight: normal;
+  color: rgb(143, 143, 143);
 }
 * body address, * body caption, * body cite, * body code, * body dfn, * body em, * body strong, * body th, * body var {
   font-style: normal;
@@ -30,13 +31,43 @@
   font-family: netflix-font;
   src: url(../../font/BebasNeue.otf);
 }
-p, h1 {
-  font-family: "netflix-font";
-  font-size: 45px;
+.navbar {
+  background-color: black;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  transition-timing-function: ease-in;
+  transition: 0.1s;
+}
+.navbar .navbar--wraper {
+  padding: 12px;
+  max-width: 1500px;
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+}
+.navbar .navbar--wraper .navbar__logo .navbar__logo--link {
+  color: rgb(157, 0, 0);
+  font: 56px "netflix-font";
+}
+.navbar .navbar--wraper .navbar__nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.navbar .navbar--wraper .navbar__nav .navbar__nav--ul {
+  display: flex;
+  flex-direction: row;
+}
+.navbar .navbar--wraper .navbar__nav .navbar__nav--ul .navbar__nav--li {
+  font: calc(0.9em + 0.4vw) "Noto Sans JP", sans-serif;
+  padding: 0px 16px;
 }
 
 body {
   background-color: rgb(40, 40, 40);
   line-height: 1.5;
-  color: rgb(224, 224, 224);
+}
+body h1, body h2, body h3, body h4, body h5, body h6, body a, body p {
+  color: rgb(235, 235, 235);
 }

@@ -2,9 +2,15 @@ import SearchIcon from "@mui/icons-material/Search";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 function HeaderNav() {
+
+  //ToDo 1. React Router - other pages
+  //ToDo 2. MUI change to accent color on hover
+  //ToDo 3. Search - animation on click giving input with white bg or/and other web page (I have to think about it)
+  //ToDo 4. Navbar disappears on scroll down, appears on scroll up, with transition and opacity
+
   return (
     <section className="navbar">
-      <div className="navbar--wraper">
+      <div className="navbar--wrapper">
         <h1 className="navbar__logo">
           <a className="navbar__logo--link" href="/">
             NETFLIX
@@ -13,8 +19,8 @@ function HeaderNav() {
         <nav className="navbar__nav">
           <ul className="navbar__nav--ul">
             <li className="navbar__nav--li">
-              <a className="navbar__nav--link" href="/favourite">
-                Favourite
+              <a className="navbar__nav--link" href="/category">
+                Category
               </a>
             </li>
           </ul>

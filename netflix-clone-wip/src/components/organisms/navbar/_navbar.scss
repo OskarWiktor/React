@@ -5,8 +5,8 @@
     top: 0;
     transition-timing-function: ease-in;
     transition: 0.1s;
-    .navbar--wraper {
-        @include wraper;
+    .navbar--wrapper {
+        @include wrapper;
         justify-content: space-between;
         .navbar__logo {
             .navbar__logo--link {
