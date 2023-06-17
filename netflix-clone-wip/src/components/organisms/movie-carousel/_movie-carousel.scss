@@ -1,0 +1,14 @@
+.movie-carousel {
+  padding-top: 120px;
+  .movie-carousel--title--wrapper {
+    @include wrapper;
+    .movie-carousel--title {
+      font: $text-big;
+      color: $almost-white;
+    }
+  }
+  .movie-carousel--wrapper {
+    @include wrapper;
+    overflow: hidden;
+  }
+}

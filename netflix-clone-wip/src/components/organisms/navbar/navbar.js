@@ -1,7 +1,7 @@
 import SearchIcon from "@mui/icons-material/Search";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
-function HeaderNav() {
+function Navbar() {
 
   //ToDo 1. React Router - other pages
   //ToDo 2. MUI change to accent color on hover
@@ -11,11 +11,11 @@ function HeaderNav() {
   return (
     <section className="navbar">
       <div className="navbar--wrapper">
-        <h1 className="navbar__logo">
+        <h2 className="navbar__logo">
           <a className="navbar__logo--link" href="/">
             NETFLIX
           </a>
-        </h1>
+        </h2>
         <nav className="navbar__nav">
           <ul className="navbar__nav--ul">
             <li className="navbar__nav--li">
@@ -42,4 +42,4 @@ function HeaderNav() {
   );
 }
 
-export default HeaderNav;
+export default Navbar;

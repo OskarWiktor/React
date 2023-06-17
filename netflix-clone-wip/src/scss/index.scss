@@ -5,8 +5,12 @@
 @import "abstract/base";
 @import 'abstract/mixin';
 
+//molecules
+@import "../components/molecules/movie-card/movie-card";
+
 //organisms
 @import "../components/organisms/navbar/navbar";
+@import "../components/organisms/movie-carousel/movie-carousel";
 
 body {
     background-color: rgb(40, 40, 40);

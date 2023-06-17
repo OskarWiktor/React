@@ -36,30 +36,28 @@
   width: 100%;
   position: fixed;
   top: 0;
-  transition-timing-function: ease-in;
-  transition: 0.1s;
 }
-.navbar .navbar--wraper {
+.navbar .navbar--wrapper {
   padding: 12px;
   max-width: 1500px;
   display: flex;
   margin: auto;
   justify-content: space-between;
 }
-.navbar .navbar--wraper .navbar__logo .navbar__logo--link {
+.navbar .navbar--wrapper .navbar__logo .navbar__logo--link {
   color: rgb(157, 0, 0);
   font: 56px "netflix-font";
 }
-.navbar .navbar--wraper .navbar__nav {
+.navbar .navbar--wrapper .navbar__nav {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.navbar .navbar--wraper .navbar__nav .navbar__nav--ul {
+.navbar .navbar--wrapper .navbar__nav .navbar__nav--ul {
   display: flex;
   flex-direction: row;
 }
-.navbar .navbar--wraper .navbar__nav .navbar__nav--ul .navbar__nav--li {
+.navbar .navbar--wrapper .navbar__nav .navbar__nav--ul .navbar__nav--li {
   font: calc(0.9em + 0.4vw) "Noto Sans JP", sans-serif;
   padding: 0px 16px;
 }
