@@ -1,6 +1,5 @@
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import { useState } from "react";
 
 function HeroSlide(props) {
   const { title, genre, thumbnail, description } = props;
@@ -12,6 +11,8 @@ function HeroSlide(props) {
       }
       return description;
   }
+
+  //ToDo 1. add read more, if description > 280, with button that show movie page with whole description, cast and so on
 
   return (
     <div className="hero-slide" style={{backgroundImage: `url(${thumbnail})`}}>
