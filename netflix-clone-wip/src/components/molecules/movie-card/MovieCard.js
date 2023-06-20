@@ -17,8 +17,8 @@ function MovieCard(props) {
           <p className="movie-card__text--year">{year}</p>
         </div>
         <div className="movie-card__icons">
-          <PlayArrowIcon />
-          <FavoriteIcon />
+          <PlayArrowIcon style={{ color: 'white'}}/>
+          <FavoriteIcon style={{ color: 'rgb(157, 0, 0)'}}/>
         </div>
       </div>
     </div>
