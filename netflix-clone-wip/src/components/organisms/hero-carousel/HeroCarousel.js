@@ -1,22 +1,19 @@
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import HeroSlide from "../../molecules/hero-slide/HeroSlide";
 
-function HeroCarousel({ movies }) {
-  const title = movies.title;
-  const genre = movies.genre;
-  const thumbnail = movies.thumbnail;
-  const description = movies.extract;
+function HeroCarousel({ randomMovies }) {
+
 
   return (
     <section className="hero-carousel">
-      <img src={thumbnail} />
-      <p>{genre}</p>
-      <h2>{title}</h2>
-      <p>{description}</p>
-      <div>
-        <PlayArrowIcon style={{color: "white"}} />
-        <FavoriteIcon style={{color: "rgb(157, 0, 0)"}} />
-      </div>
+        {randomMovies.map((movie) => (
+            <HeroSlide 
+            key={movie.title}
+            title={movie.title}
+            genres={movie.genres}
+            thumbnail={movie.thumbnail}
+            extract={movie.extract}
+            />
+        ))}
     </section>
   );
 }

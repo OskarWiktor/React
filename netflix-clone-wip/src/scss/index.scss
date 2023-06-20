@@ -7,13 +7,15 @@
 
 //molecules
 @import "../components/molecules/movie-card/movie-card";
+@import "../components/molecules/hero-slide/hero-slide";
 
 //organisms
 @import "../components/organisms/navbar/navbar";
 @import "../components/organisms/movie-carousel/movie-carousel";
+@import "../components/organisms/hero-carousel/hero-carousel";
 
 body {
-    background-color: rgb(28, 28, 28);
+    background-color: rgb(24, 24, 24);
     line-height: 1.5;
     h1,h2,h3,h4,h5,h6,a,p {
         color: $almost-white;
