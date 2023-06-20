@@ -2,7 +2,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 
 function HeroSlide(props) {
-  const { title, genre, thumbnail, description } = props;
+  const { title, genres, thumbnail, description } = props;
 
   const shortDescription = (description) => {
     const maxLength = 280;
@@ -18,7 +18,7 @@ function HeroSlide(props) {
     <div className="hero-slide" style={{backgroundImage: `url(${thumbnail})`}}>
       <div className="hero-slide--background">
         <div className="hero-slide__text">
-          <p className="hero-slide__text--genre">{genre}</p>
+          <p className="hero-slide__text--genre">{genres}</p>
           <h2 className="hero-slide__text--title">{title}</h2>
           <p className="hero-slide__text--description">{shortDescription(description)}</p>
           <div className="hero-slide--icons">
