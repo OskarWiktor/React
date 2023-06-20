@@ -11,7 +11,7 @@ function HeroCarousel({ randomMovies }) {
             title={movie.title}
             genres={movie.genres}
             thumbnail={movie.thumbnail}
-            extract={movie.extract}
+            description={movie.extract}
             />
         ))}
     </section>
