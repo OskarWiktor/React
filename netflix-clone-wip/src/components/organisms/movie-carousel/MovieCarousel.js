@@ -1,22 +1,39 @@
 import MovieCard from "../../molecules/movie-card/MovieCard";
+import {Swiper, SwiperSlide} from "swiper/react";
+import {Navigation} from "swiper";
 
-function MovieCarousel({ movies }) {
+import "swiper/swiper.min.css";
+import "swiper/css";
+import "swiper/css/navigation";
 
+function MovieCarousel({movies}) {
   return (
     <section className="movie-carousel">
       <div className="movie-carousel--title--wrapper">
-        <h1 className="movie-carousel--title">Movie Carousel</h1>
+        <h1 className="movie-carousel--title">All Movies</h1>
       </div>
       <div className="movie-carousel--wrapper">
-        {movies.map((movies, title) => (
-          <MovieCard
-            key={title}
-            title={movies.title}
-            year={movies.year}
-            genre={movies.genres}
-            thumbnail={movies.thumbnail}
-          />
-        ))}
+        <Swiper
+          style={{
+            "--swiper-navigation-color": "#9D0000",
+            "--swiper-pagination-color": "#9D0000",
+          }}
+          slidesPerView={7}
+          navigation={true}
+          modules={[Navigation]}
+        >
+          {movies.map((movies, title) => (
+            <SwiperSlide>
+              <MovieCard
+                key={title}
+                title={movies.title}
+                year={movies.year}
+                genre={movies.genres}
+                thumbnail={movies.thumbnail}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </section>
   );
