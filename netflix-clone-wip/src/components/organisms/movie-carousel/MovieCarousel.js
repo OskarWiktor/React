@@ -1,16 +1,6 @@
-import {useEffect, useState} from "react";
-import axios from "axios";
 import MovieCard from "../../molecules/movie-card/MovieCard";
 
-function MovieCarousel() {
-  const [movies, setMovies] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("/db/movies.json")
-      .then((res) => setMovies(res.data))
-      .catch((err) => console.log(err));
-  }, []);
+function MovieCarousel({ movies }) {
 
   return (
     <section className="movie-carousel">
@@ -18,7 +8,7 @@ function MovieCarousel() {
         <h1 className="movie-carousel--title">Movie Carousel</h1>
       </div>
       <div className="movie-carousel--wrapper">
-        {movies.map((movies, title, year, genre, thumbnail) => (
+        {movies.map((movies, title) => (
           <MovieCard
             key={title}
             title={movies.title}
