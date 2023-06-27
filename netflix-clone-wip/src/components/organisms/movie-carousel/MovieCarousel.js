@@ -6,11 +6,11 @@ import "swiper/swiper.min.css";
 import "swiper/css";
 import "swiper/css/navigation";
 
-function MovieCarousel({movies}) {
+function MovieCarousel({movies, carouselTitle}) {
   return (
     <section className="movie-carousel">
       <div className="movie-carousel--title--wrapper">
-        <h1 className="movie-carousel--title">All Movies</h1>
+        <h1 className="movie-carousel--title">{carouselTitle}</h1>
       </div>
       <div className="movie-carousel--wrapper">
         <Swiper
@@ -18,7 +18,7 @@ function MovieCarousel({movies}) {
             "--swiper-navigation-color": "#9D0000",
             "--swiper-pagination-color": "#9D0000",
           }}
-          slidesPerView={7}
+          slidesPerView={9}
           navigation={true}
           modules={[Navigation]}
         >

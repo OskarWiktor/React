@@ -18,6 +18,11 @@ function Navbar() {
         </h2>
         <nav className="navbar__nav">
           <ul className="navbar__nav--ul">
+          <li className="navbar__nav--li">
+              <a className="navbar__nav--link" href="/">
+                Home
+              </a>
+            </li>
             <li className="navbar__nav--li">
               <a className="navbar__nav--link" href="/category">
                 Category
