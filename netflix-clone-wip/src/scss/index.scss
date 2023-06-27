@@ -5,6 +5,8 @@
 @import "abstract/base";
 @import 'abstract/mixin';
 
+//atoms 
+@import "../components/atoms/play-button/play-button";
 //molecules
 @import "../components/molecules/movie-card/movie-card";
 @import "../components/molecules/hero-slide/hero-slide";

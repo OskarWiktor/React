@@ -1,5 +1,5 @@
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import PlayButton from "../../atoms/play-button/PlayButton";
 
 function HeroSlide(props) {
   const { title, genres, thumbnail, description } = props;
@@ -23,7 +23,7 @@ function HeroSlide(props) {
           <h2 className="hero-slide__text--title">{title}</h2>
           <p className="hero-slide__text--description">{shortDescription(description)}</p>
           <div className="hero-slide--icons">
-            <PlayArrowIcon style={{color: "white"}} />
+            <PlayButton >Play</PlayButton>
             <FavoriteIcon style={{color: "rgb(157, 0, 0)"}} />
           </div>
         </div>

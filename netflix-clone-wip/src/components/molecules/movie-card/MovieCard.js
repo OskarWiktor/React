@@ -1,5 +1,5 @@
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import PlayButton from "../../atoms/play-button/PlayButton";
 
 function MovieCard(props) {
   const title = props.title;
@@ -17,7 +17,7 @@ function MovieCard(props) {
           <p className="movie-card__text--year">{year}</p>
         </div>
         <div className="movie-card__icons">
-          <PlayArrowIcon style={{ color: 'white'}}/>
+          <PlayButton />
           <FavoriteIcon style={{ color: 'rgb(157, 0, 0)'}}/>
         </div>
       </div>

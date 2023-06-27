@@ -31,10 +31,16 @@
   font-family: netflix-font;
   src: url(../../font/BebasNeue.otf);
 }
+.play-btn {
+  background-color: rgb(157, 0, 0);
+  border: none;
+  padding: 4px 6px;
+  border-radius: 6px;
+}
+
 .movie-card {
   width: 180px;
   height: 240px;
-  margin: 0px 24px 0px 0px;
   background-color: rgba(24, 24, 24, 0.772);
   position: relative;
 }
@@ -75,16 +81,93 @@
 .movie-card .movie-card__on-hover .movie-card__text .movie-card__text--title {
   text-align: center;
   font: bold calc(0.8em + 0.2vw) "Noto Sans JP", sans-serif;
-  color: rgb(235, 235, 235);
+  color: rgb(224, 224, 224);
 }
 .movie-card .movie-card__on-hover .movie-card__text .movie-card__text--year {
   text-align: center;
   font: bold calc(0.8em + 0.2vw) "Noto Sans JP", sans-serif;
-  color: rgb(235, 235, 235);
+  color: rgb(224, 224, 224);
 }
 .movie-card .movie-card__on-hover .movie-card__icons {
   display: flex;
   justify-content: space-between;
+}
+
+.hero-slide {
+  display: flex;
+  width: 100%;
+  height: 600px;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.hero-slide .hero-slide--background {
+  width: 100%;
+  height: 600px;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.51);
+  background: linear-gradient(90deg, rgb(24, 24, 24) 0%, rgba(24, 24, 24, 0.5466387238) 50%, rgba(24, 24, 24, 0) 100%);
+}
+@media (max-width: 760px) {
+  .hero-slide .hero-slide--background {
+    backdrop-filter: none;
+    background: rgba(0, 0, 0, 0.59);
+  }
+}
+.hero-slide .hero-slide--background .hero-slide__text {
+  width: clamp(300px, 50%, 600px);
+  padding: 56px;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  position: relative;
+}
+@media (max-width: 760px) {
+  .hero-slide .hero-slide--background .hero-slide__text {
+    margin: auto;
+    padding: 24px;
+  }
+}
+.hero-slide .hero-slide--background .hero-slide__text .hero-slide__text--genre {
+  font: calc(0.8em + 0.2vw) "Noto Sans JP", sans-serif;
+  color: rgb(176, 176, 176);
+}
+.hero-slide .hero-slide--background .hero-slide__text .hero-slide__text--title {
+  font: bold calc(2.4em + 0.9vw) "Noto Sans JP", sans-serif;
+  color: rgb(224, 224, 224);
+  margin-top: 12px;
+}
+.hero-slide .hero-slide--background .hero-slide__text .hero-slide__text--description {
+  font: calc(0.9em + 0.4vw) "Noto Sans JP", sans-serif;
+  color: rgb(176, 176, 176);
+  margin-top: 16px;
+}
+.hero-slide .hero-slide--background .hero-slide__text .hero-slide--icons {
+  margin-top: 32px;
+  display: flex;
+}
+.hero-slide .hero-slide__thumbnail {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  float: right;
+}
+@media (max-width: 760px) {
+  .hero-slide .hero-slide__thumbnail {
+    background: rgba(0, 0, 0, 0.599);
+  }
+}
+.hero-slide .hero-slide__thumbnail .hero-slide__thumbnail--img {
+  width: 400px;
+  height: 600px;
+  z-index: -1;
+}
+@media (max-width: 760px) {
+  .hero-slide .hero-slide__thumbnail .hero-slide__thumbnail--img {
+    display: none;
+  }
 }
 
 .navbar {
@@ -92,6 +175,7 @@
   width: 100%;
   position: fixed;
   top: 0;
+  z-index: 100;
 }
 .navbar .navbar--wrapper {
   padding: 12px;
@@ -118,6 +202,9 @@
   padding: 0px 16px;
 }
 
+.movie-carousel {
+  margin: 56px 0px;
+}
 .movie-carousel .movie-carousel--title--wrapper {
   padding: 12px;
   max-width: 1700px;
@@ -126,7 +213,7 @@
 }
 .movie-carousel .movie-carousel--title--wrapper .movie-carousel--title {
   font: calc(1em + 0.6vw) "Noto Sans JP", sans-serif;
-  color: rgb(235, 235, 235);
+  color: rgb(224, 224, 224);
 }
 .movie-carousel .movie-carousel--wrapper {
   padding: 12px;
@@ -139,17 +226,13 @@
 .hero-carousel {
   width: 100%;
   height: clamp(200px, 40%, 500px);
-  padding-top: 120px;
-}
-.hero-carousel .hero-carousel--img {
-  height: 500px;
-  width: 100%;
+  padding-top: 91px;
 }
 
 body {
-  background-color: rgb(28, 28, 28);
+  background-color: rgb(24, 24, 24);
   line-height: 1.5;
 }
 body h1, body h2, body h3, body h4, body h5, body h6, body a, body p {
-  color: rgb(235, 235, 235);
+  color: rgb(224, 224, 224);
 }
