@@ -10,13 +10,57 @@ function App() {
   const [randomMovies, setRandomMovies] = useState([]);
   const [movies2023, setMovies2023] = useState([]);
 
+  const [moviesGenreHorror, setMoviesGenreHorror] = useState([]);
+  const [moviesGenreComedy, setMoviesGenreComedy] = useState([]);
+  const [moviesGenreThriller, setMoviesGenreThriller] = useState([]);
+  const [moviesGenreAnimated, setMoviesGenreAnimated] = useState([]);
+  const [moviesGenreFantasy, setMoviesGenreFantasy] = useState([]);
+  const [moviesGenreSuperhero, setMoviesGenreSuperhero] = useState([]);
+  const [moviesGenreAction, setMoviesGenreAction] = useState([]);
+
   useEffect(() => {
     axios
       .get("/db/movies.json")
       .then((res) => {
         setMovies(res.data);
+
         const moviesFrom2023 = res.data.filter((movie) => movie.year === 2023);
         setMovies2023(moviesFrom2023);
+
+        const moviesHorror = res.data.filter((movie) =>
+          movie.genres.includes("Horror")
+        );
+        setMoviesGenreHorror(moviesHorror);
+
+        const moviesComedy = res.data.filter((movie) =>
+          movie.genres.includes("Comedy")
+        );
+        setMoviesGenreComedy(moviesComedy);
+
+        const moviesThriller = res.data.filter((movie) =>
+          movie.genres.includes("Thriller")
+        );
+        setMoviesGenreThriller(moviesThriller);
+
+        const moviesAnimated = res.data.filter((movie) =>
+          movie.genres.includes("Animated")
+        );
+        setMoviesGenreAnimated(moviesAnimated);
+
+        const moviesFantasy = res.data.filter((movie) =>
+          movie.genres.includes("Fantasy")
+        );
+        setMoviesGenreFantasy(moviesFantasy);
+
+        const moviesSuperhero = res.data.filter((movie) =>
+        movie.genres.includes("Superhero")
+        );
+        setMoviesGenreSuperhero(moviesSuperhero);
+
+        const moviesAction = res.data.filter((movie) => 
+        movie.genres.includes("Action")
+        );
+        setMoviesGenreAction(moviesAction)
       })
       .catch((err) => console.log(err));
   }, []);
@@ -46,7 +90,13 @@ function App() {
       <Navbar />
       <HeroCarousel randomMovies={randomMovies} />
       <MovieCarousel carouselTitle={"Movies from 2023"} movies={movies2023} />
-      <MovieCarousel carouselTitle={"All movies"} movies={movies} />
+      <MovieCarousel carouselTitle={"Horror"} movies={moviesGenreHorror} />
+      <MovieCarousel carouselTitle={"Comedy"} movies={moviesGenreComedy} />
+      <MovieCarousel carouselTitle={"Thriller"} movies={moviesGenreThriller} />
+      <MovieCarousel carouselTitle={"Animated"} movies={moviesGenreAnimated} />
+      <MovieCarousel carouselTitle={"Fantasy"} movies={moviesGenreFantasy} />
+      <MovieCarousel carouselTitle={"Superhero"} movies={moviesGenreSuperhero} />
+      <MovieCarousel carouselTitle={"Action"} movies={moviesGenreAction} />
     </div>
   );
 }
