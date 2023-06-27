@@ -1,4 +1,4 @@
-import FavoriteIcon from "@mui/icons-material/Favorite";
+import LikeButton from "../../atoms/like-button/LikeButton";
 import PlayButton from "../../atoms/play-button/PlayButton";
 
 function HeroSlide(props) {
@@ -24,7 +24,7 @@ function HeroSlide(props) {
           <p className="hero-slide__text--description">{shortDescription(description)}</p>
           <div className="hero-slide--icons">
             <PlayButton >Play</PlayButton>
-            <FavoriteIcon style={{color: "rgb(157, 0, 0)"}} />
+            <LikeButton />
           </div>
         </div>
 

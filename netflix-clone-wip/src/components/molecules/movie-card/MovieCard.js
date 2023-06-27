@@ -1,5 +1,5 @@
-import FavoriteIcon from "@mui/icons-material/Favorite";
 import PlayButton from "../../atoms/play-button/PlayButton";
+import LikeButton from "../../atoms/like-button/LikeButton";
 
 function MovieCard(props) {
   const title = props.title;
@@ -18,7 +18,7 @@ function MovieCard(props) {
         </div>
         <div className="movie-card__icons">
           <PlayButton />
-          <FavoriteIcon style={{ color: 'rgb(157, 0, 0)'}}/>
+          <LikeButton />
         </div>
       </div>
     </div>
