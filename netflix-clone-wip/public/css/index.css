@@ -32,10 +32,26 @@
   src: url(../../font/BebasNeue.otf);
 }
 .play-btn {
+  display: flex;
   background-color: rgb(157, 0, 0);
   border: none;
   padding: 4px 6px;
-  border-radius: 6px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+.play-btn .play-btn--text {
+  font: bold calc(0.8em + 0.2vw) "Noto Sans JP", sans-serif;
+  color: white;
+  padding-right: 8px;
+  margin: auto;
+}
+
+.like-btn {
+  display: flex;
+  background-color: transparent;
+  border: none;
+  padding: 4px 6px;
+  cursor: pointer;
 }
 
 .movie-card {
@@ -176,9 +192,10 @@
   position: fixed;
   top: 0;
   z-index: 100;
+  padding: 12px;
 }
 .navbar .navbar--wrapper {
-  padding: 12px;
+  padding: 6px 0px;
   max-width: 1700px;
   display: flex;
   margin: auto;
@@ -203,10 +220,11 @@
 }
 
 .movie-carousel {
-  margin: 56px 0px;
+  margin: 36px 0px;
+  padding: 12px;
 }
 .movie-carousel .movie-carousel--title--wrapper {
-  padding: 12px;
+  padding: 6px 0px;
   max-width: 1700px;
   display: flex;
   margin: auto;
@@ -216,7 +234,7 @@
   color: rgb(224, 224, 224);
 }
 .movie-carousel .movie-carousel--wrapper {
-  padding: 12px;
+  padding: 6px 0px;
   max-width: 1700px;
   display: flex;
   margin: auto;

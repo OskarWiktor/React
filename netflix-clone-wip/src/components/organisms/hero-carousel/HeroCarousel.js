@@ -1,6 +1,6 @@
 import HeroSlide from "../../molecules/hero-slide/HeroSlide";
 import { Swiper, SwiperSlide}  from "swiper/react";
-import { Navigation } from "swiper";
+import { Navigation, Autoplay } from "swiper";
 
 import "swiper/swiper.min.css";
 import "swiper/css";
@@ -18,7 +18,8 @@ function HeroCarousel({randomMovies}) {
         slidesPerView={1}
         navigation={true}
         loop={true}
-        modules={[  Navigation ]}
+        autoplay
+        modules={[  Navigation, Autoplay ]}
       >
         {randomMovies.map((movie, title) => (
           <SwiperSlide>

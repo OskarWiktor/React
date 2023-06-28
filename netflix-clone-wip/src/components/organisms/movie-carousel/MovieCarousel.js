@@ -18,9 +18,31 @@ function MovieCarousel({movies, carouselTitle}) {
             "--swiper-navigation-color": "#9D0000",
             "--swiper-pagination-color": "#9D0000",
           }}
-          slidesPerView={9}
           navigation={true}
           modules={[Navigation]}
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+            },
+            375: {
+              slidesPerView: 2,
+            },
+            640: {
+              slidesPerView: 3,
+            },
+            768: {
+              slidesPerView: 4,
+            },
+            1024: {
+              slidesPerView: 5,
+            },
+            1280: {
+              slidesPerView: 6,
+            },
+            1920: {
+              slidesPerView: 8,
+            }
+          }}
         >
           {movies.map((movies, title) => (
             <SwiperSlide>
