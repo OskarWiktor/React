@@ -44,10 +44,10 @@ function MovieCarousel({movies, carouselTitle}) {
             }
           }}
         >
-          {movies.map((movies, title) => (
+          {movies.map((movies) => (
             <SwiperSlide>
               <MovieCard
-                key={title}
+                key={movies.title}
                 title={movies.title}
                 year={movies.year}
                 genre={movies.genres}

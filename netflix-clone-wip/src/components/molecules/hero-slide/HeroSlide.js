@@ -15,11 +15,13 @@ function HeroSlide(props) {
   //ToDo 1. add read more, if description > 280, with button that show movie page with whole description, cast and so on
   //ToDo 2. make space between different genres
 
+  const genresWithSpace = genres.join(' ');
+
   return (
     <div className="hero-slide" style={{backgroundImage: `url(${thumbnail})`}}>
       <div className="hero-slide--background">
         <div className="hero-slide__text">
-          <p className="hero-slide__text--genre">{genres}</p>
+          <p className="hero-slide__text--genre">{genresWithSpace}</p>
           <h2 className="hero-slide__text--title">{title}</h2>
           <p className="hero-slide__text--description">{shortDescription(description)}</p>
           <div className="hero-slide--icons">

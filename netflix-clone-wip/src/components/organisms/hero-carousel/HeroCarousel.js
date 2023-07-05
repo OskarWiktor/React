@@ -21,14 +21,14 @@ function HeroCarousel({randomMovies}) {
         autoplay
         modules={[  Navigation, Autoplay ]}
       >
-        {randomMovies.map((movie, title) => (
+        {randomMovies.map((movies) => (
           <SwiperSlide>
             <HeroSlide
-              key={title}
-              title={movie.title}
-              genres={movie.genres}
-              thumbnail={movie.thumbnail}
-              description={movie.extract}
+              key={movies.title}
+              title={movies.title}
+              genres={movies.genres}
+              thumbnail={movies.thumbnail}
+              description={movies.extract}
             />
           </SwiperSlide>
         ))}
