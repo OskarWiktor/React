@@ -6,17 +6,17 @@
 @import 'abstract/mixin';
 
 //atoms 
-@import "../components/atoms/play-button/play-button";
-@import "../components/atoms/like-button/like-button";
+@import "../components/atoms/PlayButton/play-button";
+@import "../components/atoms/LikeButton/like-button";
 
 //molecules
-@import "../components/molecules/movie-card/movie-card";
-@import "../components/molecules/hero-slide/hero-slide";
+@import "../components/molecules/MovieCard/movie-card";
+@import "../components/molecules/HeroSlide/hero-slide";
 
 //organisms
-@import "../components/organisms/navbar/navbar";
-@import "../components/organisms/movie-carousel/movie-carousel";
-@import "../components/organisms/hero-carousel/hero-carousel";
+@import "../components/organisms/Navbar/navbar";
+@import "../components/organisms/MovieCarousel/movie-carousel";
+@import "../components/organisms/HeroCarousel/hero-carousel";
 
 body {
     background-color: rgb(24, 24, 24);

@@ -1,5 +1,5 @@
-import PlayButton from "../../atoms/play-button/PlayButton";
-import LikeButton from "../../atoms/like-button/LikeButton";
+import PlayButton from "../../atoms/PlayButton/PlayButton";
+import LikeButton from "../../atoms/LikeButton/LikeButton";
 
 function MovieCard(props) {
   const title = props.title;

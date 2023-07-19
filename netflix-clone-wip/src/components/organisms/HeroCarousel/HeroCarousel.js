@@ -1,4 +1,4 @@
-import HeroSlide from "../../molecules/hero-slide/HeroSlide";
+import HeroSlide from "../../molecules/HeroSlide/HeroSlide";
 import { Swiper, SwiperSlide}  from "swiper/react";
 import { Navigation, Autoplay } from "swiper";
 

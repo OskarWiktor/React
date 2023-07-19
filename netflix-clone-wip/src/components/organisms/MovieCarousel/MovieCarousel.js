@@ -1,4 +1,4 @@
-import MovieCard from "../../molecules/movie-card/MovieCard";
+import MovieCard from "../../molecules/MovieCard/MovieCard";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Navigation} from "swiper";
 

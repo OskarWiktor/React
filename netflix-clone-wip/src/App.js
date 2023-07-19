@@ -1,7 +1,7 @@
 import {Routes, Route} from "react-router-dom";
-import HeroCarousel from "./components/organisms/hero-carousel/HeroCarousel";
-import MovieCarousel from "./components/organisms/movie-carousel/MovieCarousel";
-import Navbar from "./components/organisms/navbar/Navbar";
+import HeroCarousel from "./components/organisms/HeroCarousel/HeroCarousel";
+import MovieCarousel from "./components/organisms/MovieCarousel/MovieCarousel";
+import Navbar from "./components/organisms/Navbar/Navbar";
 
 import Home from "./components/pages/Home";
 import Category from "./components/pages/Category";
