@@ -15,9 +15,13 @@
 
 //organisms
 @import "../components/organisms/SideMenu/side-menu";
+@import "../components/organisms/MovieGrid/movie-grid.scss";
 @import "../components/organisms/Navbar/navbar";
 @import "../components/organisms/MovieCarousel/movie-carousel";
 @import "../components/organisms/HeroCarousel/hero-carousel";
+
+//pages
+@import "../components/pages/Category/category";
 
 body {
     background-color: rgb(24, 24, 24);

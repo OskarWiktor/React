@@ -4,7 +4,7 @@ import MovieCarousel from "./components/organisms/MovieCarousel/MovieCarousel";
 import Navbar from "./components/organisms/Navbar/Navbar";
 
 import Home from "./components/pages/Home";
-import Category from "./components/pages/Category";
+import Category from "./components/pages/Category/Category";
 import SingleMovie from "./components/pages/SingleMovie";
 import Search from "./components/pages/Search";
 import Account from "./components/pages/Account";
@@ -94,7 +94,7 @@ function App() {
 
   return (
     <>
-    <Navbar />
+      <Navbar />
       <Routes>
         <Route
           path="/"
@@ -136,7 +136,7 @@ function App() {
             </div>
           }
         ></Route>
-        <Route path="/category" element={<Category />}/>
+        <Route path="/category" element={<Category />} />
         <Route path="/search" element={<Search />} />
         <Route path="/account" element={<Account />} />
         <Route path="/{title}" element={<SingleMovie />} />
