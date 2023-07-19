@@ -11,9 +11,7 @@ function HeroSlide(props) {
       }
       return description;
   }
-
   //ToDo 1. add read more, if description > 280, with button that show movie page with whole description, cast and so on
-  //ToDo 2. make space between different genres
 
   const genresWithSpace = genres.join(' ');
 
