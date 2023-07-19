@@ -1,6 +1,13 @@
+import {Routes, Route} from "react-router-dom";
 import HeroCarousel from "./components/organisms/hero-carousel/HeroCarousel";
 import MovieCarousel from "./components/organisms/movie-carousel/MovieCarousel";
 import Navbar from "./components/organisms/navbar/Navbar";
+
+import Home from "./components/pages/Home";
+import Category from "./components/pages/Category";
+import SingleMovie from "./components/pages/SingleMovie";
+import Search from "./components/pages/Search";
+import Account from "./components/pages/Account";
 
 import axios from "axios";
 import {useEffect, useState} from "react";
@@ -53,14 +60,14 @@ function App() {
         setMoviesGenreFantasy(moviesFantasy);
 
         const moviesSuperhero = res.data.filter((movie) =>
-        movie.genres.includes("Superhero")
+          movie.genres.includes("Superhero")
         );
         setMoviesGenreSuperhero(moviesSuperhero);
 
-        const moviesAction = res.data.filter((movie) => 
-        movie.genres.includes("Action")
+        const moviesAction = res.data.filter((movie) =>
+          movie.genres.includes("Action")
         );
-        setMoviesGenreAction(moviesAction)
+        setMoviesGenreAction(moviesAction);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -86,18 +93,55 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Navbar />
-      <HeroCarousel randomMovies={randomMovies} />
-      <MovieCarousel carouselTitle={"Movies from 2023"} movies={movies2023} />
-      <MovieCarousel carouselTitle={"Horror"} movies={moviesGenreHorror} />
-      <MovieCarousel carouselTitle={"Comedy"} movies={moviesGenreComedy} />
-      <MovieCarousel carouselTitle={"Thriller"} movies={moviesGenreThriller} />
-      <MovieCarousel carouselTitle={"Animated"} movies={moviesGenreAnimated} />
-      <MovieCarousel carouselTitle={"Fantasy"} movies={moviesGenreFantasy} />
-      <MovieCarousel carouselTitle={"Superhero"} movies={moviesGenreSuperhero} />
-      <MovieCarousel carouselTitle={"Action"} movies={moviesGenreAction} />
-    </div>
+    <>
+    <Navbar />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div className="App">
+              <HeroCarousel randomMovies={randomMovies} />
+              <MovieCarousel
+                carouselTitle={"Movies from 2023"}
+                movies={movies2023}
+              />
+              <MovieCarousel
+                carouselTitle={"Horror"}
+                movies={moviesGenreHorror}
+              />
+              <MovieCarousel
+                carouselTitle={"Comedy"}
+                movies={moviesGenreComedy}
+              />
+              <MovieCarousel
+                carouselTitle={"Thriller"}
+                movies={moviesGenreThriller}
+              />
+              <MovieCarousel
+                carouselTitle={"Animated"}
+                movies={moviesGenreAnimated}
+              />
+              <MovieCarousel
+                carouselTitle={"Fantasy"}
+                movies={moviesGenreFantasy}
+              />
+              <MovieCarousel
+                carouselTitle={"Superhero"}
+                movies={moviesGenreSuperhero}
+              />
+              <MovieCarousel
+                carouselTitle={"Action"}
+                movies={moviesGenreAction}
+              />
+            </div>
+          }
+        ></Route>
+        <Route path="/category" element={<Category />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/account" element={<Account />} />
+        <Route path="/{title}" element={<SingleMovie />} />
+      </Routes>
+    </>
   );
 }
 
