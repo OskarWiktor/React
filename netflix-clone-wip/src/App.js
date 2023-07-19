@@ -136,7 +136,7 @@ function App() {
             </div>
           }
         ></Route>
-        <Route path="/category" element={<Category />} />
+        <Route path="/category" element={<Category />}/>
         <Route path="/search" element={<Search />} />
         <Route path="/account" element={<Account />} />
         <Route path="/{title}" element={<SingleMovie />} />
