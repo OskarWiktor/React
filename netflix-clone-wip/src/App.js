@@ -1,13 +1,11 @@
 import {Routes, Route} from "react-router-dom";
-import HeroCarousel from "./components/organisms/HeroCarousel/HeroCarousel";
-import MovieCarousel from "./components/organisms/MovieCarousel/MovieCarousel";
 import Navbar from "./components/organisms/Navbar/Navbar";
 
-import Home from "./components/pages/Home";
+import Home from "./components/pages/Home/Home";
 import Category from "./components/pages/Category/Category";
-import SingleMovie from "./components/pages/SingleMovie";
-import Search from "./components/pages/Search";
-import Account from "./components/pages/Account";
+import SingleMovie from "./components/pages/SingleMovie/SingleMovie";
+import Search from "./components/pages/Search/Search";
+import Account from "./components/pages/Account/Account";
 
 import axios from "axios";
 import {useEffect, useState} from "react";
@@ -99,41 +97,17 @@ function App() {
         <Route
           path="/"
           element={
-            <div className="App">
-              <HeroCarousel randomMovies={randomMovies} />
-              <MovieCarousel
-                carouselTitle={"Movies from 2023"}
-                movies={movies2023}
-              />
-              <MovieCarousel
-                carouselTitle={"Horror"}
-                movies={moviesGenreHorror}
-              />
-              <MovieCarousel
-                carouselTitle={"Comedy"}
-                movies={moviesGenreComedy}
-              />
-              <MovieCarousel
-                carouselTitle={"Thriller"}
-                movies={moviesGenreThriller}
-              />
-              <MovieCarousel
-                carouselTitle={"Animated"}
-                movies={moviesGenreAnimated}
-              />
-              <MovieCarousel
-                carouselTitle={"Fantasy"}
-                movies={moviesGenreFantasy}
-              />
-              <MovieCarousel
-                carouselTitle={"Superhero"}
-                movies={moviesGenreSuperhero}
-              />
-              <MovieCarousel
-                carouselTitle={"Action"}
-                movies={moviesGenreAction}
-              />
-            </div>
+            <Home
+              randomMovies={randomMovies}
+              movies2023={movies2023}
+              moviesGenreHorror={moviesGenreHorror}
+              moviesGenreComedy={moviesGenreComedy}
+              moviesGenreThriller={moviesGenreThriller}
+              moviesGenreAnimated={moviesGenreAnimated}
+              moviesGenreFantasy={moviesGenreFantasy}
+              moviesGenreSuperhero={moviesGenreSuperhero}
+              moviesGenreAction={moviesGenreAction}
+            />
           }
         ></Route>
         <Route path="/category" element={<Category />} />

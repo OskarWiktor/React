@@ -70,6 +70,8 @@
 }
 .movie-card .movie-card__thumbnail .movie-card__thumbnail--img {
   transition: transform 0.3s ease-in-out;
+  width: 100%;
+  height: 100%;
 }
 .movie-card .movie-card__thumbnail .movie-card__thumbnail--img:hover {
   transform: scale(1.1);
@@ -186,6 +188,74 @@
   }
 }
 
+.side-menu {
+  display: flex;
+  flex-direction: column;
+  padding: 101px 2dvw 0px 2dvw;
+  width: clamp(100px, 30%, 300px);
+  height: 100dvh;
+  background-color: rgb(9, 9, 9);
+}
+.side-menu .side-menu--title {
+  padding: 24px 12px 6px 12px;
+  font: calc(0.9em + 0.4vw) "Noto Sans JP", sans-serif;
+  color: rgb(224, 224, 224);
+}
+.side-menu .side-menu--list {
+  padding: 12px;
+}
+.side-menu .side-menu--list .side-menu--list__item {
+  padding: 2px 12px;
+  font: calc(0.8em + 0.2vw) "Noto Sans JP", sans-serif;
+  color: rgb(224, 224, 224);
+}
+
+.movie-grid {
+  padding: 101px 2dvw 0px 2dvw;
+  width: 100%;
+}
+.movie-grid .movie-grid--title {
+  padding: 24px;
+  font: calc(1em + 0.6vw) "Noto Sans JP", sans-serif;
+  color: rgb(224, 224, 224);
+}
+.movie-grid .movie-grid--wrapper {
+  display: grid;
+  gap: 1vw;
+  grid-template-columns: repeat(6, 1fr);
+}
+@media screen and (max-width: 1420px) {
+  .movie-grid .movie-grid--wrapper {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+@media screen and (max-width: 1200px) {
+  .movie-grid .movie-grid--wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (max-width: 992px) {
+  .movie-grid .movie-grid--wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 768px) {
+  .movie-grid .movie-grid--wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 576px) {
+  .movie-grid .movie-grid--wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.movie-grid .movie-grid--wrapper .movie-grid--test {
+  margin: auto;
+  width: 180px;
+  height: 240px;
+  background-color: black;
+}
+
 .navbar {
   background-color: black;
   width: 100%;
@@ -256,6 +326,10 @@
   width: 100%;
   height: clamp(200px, 40%, 500px);
   padding-top: 91px;
+}
+
+.category-page--wrapper {
+  display: flex;
 }
 
 body {
