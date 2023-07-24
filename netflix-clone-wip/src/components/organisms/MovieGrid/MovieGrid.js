@@ -7,7 +7,7 @@ function MovieGrid({movies}) {
       <div className="movie-grid--wrapper">
         {movies.map((movies) => (
             <MovieCard
-              key={movies.title}
+              key={movies.title+movies.year}
               title={movies.title}
               year={movies.year}
               genre={movies.genres}

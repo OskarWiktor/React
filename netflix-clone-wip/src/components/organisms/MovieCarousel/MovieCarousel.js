@@ -41,13 +41,12 @@ function MovieCarousel({movies, carouselTitle}) {
             },
             1920: {
               slidesPerView: 8,
-            }
+            },
           }}
         >
           {movies.map((movies) => (
-            <SwiperSlide>
+            <SwiperSlide key={movies.title + movies.year}>
               <MovieCard
-                key={movies.title}
                 title={movies.title}
                 year={movies.year}
                 genre={movies.genres}

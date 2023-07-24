@@ -1,13 +1,12 @@
 import HeroSlide from "../../molecules/HeroSlide/HeroSlide";
-import { Swiper, SwiperSlide}  from "swiper/react";
-import { Navigation, Autoplay } from "swiper";
+import {Swiper, SwiperSlide} from "swiper/react";
+import {Navigation, Autoplay} from "swiper";
 
 import "swiper/swiper.min.css";
 import "swiper/css";
 import "swiper/css/navigation";
 
 function HeroCarousel({randomMovies}) {
-
   return (
     <section className="hero-carousel">
       <Swiper
@@ -19,12 +18,11 @@ function HeroCarousel({randomMovies}) {
         navigation={true}
         loop={true}
         autoplay
-        modules={[  Navigation, Autoplay ]}
+        modules={[Navigation, Autoplay]}
       >
         {randomMovies.map((movies) => (
-          <SwiperSlide>
+          <SwiperSlide key={movies.title + movies.year}>
             <HeroSlide
-              key={movies.title}
               title={movies.title}
               genres={movies.genres}
               thumbnail={movies.thumbnail}
