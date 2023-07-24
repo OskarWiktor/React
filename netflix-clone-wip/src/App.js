@@ -24,6 +24,8 @@ function App() {
   const [moviesGenreSuperhero, setMoviesGenreSuperhero] = useState([]);
   const [moviesGenreAction, setMoviesGenreAction] = useState([]);
 
+  const [allGenres, setAllGenres] = useState([])
+
   useEffect(() => {
     axios
       .get("/db/movies.json")
@@ -67,6 +69,9 @@ function App() {
           movie.genres.includes("Action")
         );
         setMoviesGenreAction(moviesAction);
+
+        const allGenres = Array.from(new Set(res.data.flatMap((movie) => movie.genres)));
+        setAllGenres(allGenres);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -111,7 +116,7 @@ function App() {
             />
           }
         ></Route>
-        <Route path="/category" element={<Category movies={movies} />} />
+        <Route path="/category" element={<Category movies={movies} allGenres={allGenres}/>} />
         <Route path="/search" element={<Search />} />
         <Route path="/account" element={<Account />} />
         <Route path="/:title" element={<SingleMovie />} />

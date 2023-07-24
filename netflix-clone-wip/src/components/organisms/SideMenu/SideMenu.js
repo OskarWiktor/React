@@ -1,18 +1,18 @@
-function SideMenu() {
+function SideMenu({ allGenres, handleSelectedGenres }) {
     return (
-        <aside className="side-menu">
-            <h3 className="side-menu--title">Categories:</h3>
-            <ul className="side-menu--list">
-                <li className="side-menu--list__item">a</li>
-                <li className="side-menu--list__item">b</li>
-                <li className="side-menu--list__item">c</li>
-                <li className="side-menu--list__item">d</li>
-                <li className="side-menu--list__item">e</li>
-                <li className="side-menu--list__item">f</li>
-                <li className="side-menu--list__item">g</li>
-            </ul>
-        </aside>
-    )
+    <aside className="side-menu">
+      <h3 className="side-menu--title">Categories:</h3>
+      {allGenres.map((genres) => (
+        <button
+          key={genres}
+          onClick={() => handleSelectedGenres(genres)}
+          className="side-menu--genres"
+        >
+          {genres}
+        </button>
+      ))}
+    </aside>
+  );
 }
 
-export default SideMenu
+export default SideMenu;

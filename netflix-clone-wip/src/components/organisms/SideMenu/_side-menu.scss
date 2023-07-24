@@ -9,13 +9,24 @@
         padding: 24px 12px 6px 12px;
         font: $text-normal;
         color: $almost-white;
+        border-bottom: 1px solid $accent-color;
     }
-    .side-menu--list {
-        padding: 12px;
-        .side-menu--list__item {
-            padding: 2px 12px;
-            font: $text-small;
-            color: $almost-white;
-        }
+    .side-menu--genres {
+        background-color: transparent;
+        outline: none;
+        border: none;
+        color: $almost-white;
+        font: $text-small;
+        padding: 6px;
+        text-align: left;
+    }
+    .side-menu--genres:hover {
+        cursor: pointer;
+        color: $accent-color;
+        font: $text-small--bold;
+    }
+    .side-menu--genres:focus {
+        color: $accent-color;
+        font: $text-small--bold;
     }
 }

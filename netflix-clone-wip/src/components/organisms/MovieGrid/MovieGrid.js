@@ -1,9 +1,9 @@
 import MovieCard from "../../molecules/MovieCard/MovieCard";
 
-function MovieGrid({movies}) {
+function MovieGrid({movies, selectedGenres}) {
   return (
     <div className="movie-grid">
-      <h1 className="movie-grid--title">Movies from Selected Category</h1>
+      <h1 className="movie-grid--title">{selectedGenres ? `${selectedGenres} Movies`: `All Movies`}</h1>
       <div className="movie-grid--wrapper">
         {movies.map((movies) => (
             <MovieCard
