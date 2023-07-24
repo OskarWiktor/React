@@ -9,7 +9,9 @@
   .movie-grid--wrapper {
     display: grid;
     gap: 1vw;
+
     grid-template-columns: repeat(6, 1fr);
+    
     @media screen and (max-width: 1420px) {
       grid-template-columns: repeat(5, 1fr);
     }
@@ -28,12 +30,6 @@
 
     @media screen and (max-width: 576px) {
       grid-template-columns: repeat(1, 1fr);
-    }
-    .movie-grid--test {
-      margin: auto;
-      width: 180px;
-      height: 240px;
-      background-color: black;
     }
   }
 }

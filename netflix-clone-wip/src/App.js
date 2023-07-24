@@ -15,6 +15,7 @@ function App() {
   const [randomMovies, setRandomMovies] = useState([]);
   const [movies2023, setMovies2023] = useState([]);
 
+  //genres for HP
   const [moviesGenreHorror, setMoviesGenreHorror] = useState([]);
   const [moviesGenreComedy, setMoviesGenreComedy] = useState([]);
   const [moviesGenreThriller, setMoviesGenreThriller] = useState([]);
@@ -110,10 +111,10 @@ function App() {
             />
           }
         ></Route>
-        <Route path="/category" element={<Category />} />
+        <Route path="/category" element={<Category movies={movies} />} />
         <Route path="/search" element={<Search />} />
         <Route path="/account" element={<Account />} />
-        <Route path="/{title}" element={<SingleMovie />} />
+        <Route path="/:title" element={<SingleMovie />} />
       </Routes>
     </>
   );

@@ -1,11 +1,11 @@
 import SideMenu from "../../organisms/SideMenu/SideMenu";
 import MovieGrid from "../../organisms/MovieGrid/MovieGrid";
 
-function Category() {
+function Category({ movies }) {
   return (
     <div className="category-page--wrapper">
       <SideMenu />
-      <MovieGrid />
+      <MovieGrid movies={movies}/>
     </div>
   );
 }
