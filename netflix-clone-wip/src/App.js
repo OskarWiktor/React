@@ -12,10 +12,10 @@ import {useEffect, useState} from "react";
 
 function App() {
   const [movies, setMovies] = useState([]);
+
+  // HP
   const [randomMovies, setRandomMovies] = useState([]);
   const [movies2023, setMovies2023] = useState([]);
-
-  //genres for HP
   const [moviesGenreHorror, setMoviesGenreHorror] = useState([]);
   const [moviesGenreComedy, setMoviesGenreComedy] = useState([]);
   const [moviesGenreThriller, setMoviesGenreThriller] = useState([]);
@@ -24,7 +24,10 @@ function App() {
   const [moviesGenreSuperhero, setMoviesGenreSuperhero] = useState([]);
   const [moviesGenreAction, setMoviesGenreAction] = useState([]);
 
+  // Category page
   const [allGenres, setAllGenres] = useState([])
+
+  // Single Movies pages
 
   useEffect(() => {
     axios

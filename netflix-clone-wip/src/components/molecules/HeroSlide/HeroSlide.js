@@ -31,7 +31,7 @@ function HeroSlide(props) {
         </div>
 
         <div className="hero-slide__thumbnail">
-          <img className="hero-slide__thumbnail--img" src={thumbnail} />
+          <img alt={`${title} movie`} className="hero-slide__thumbnail--img" src={thumbnail} />
         </div>
       </div>
     </div>
