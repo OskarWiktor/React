@@ -74,7 +74,7 @@ function App() {
         setMoviesGenreAction(moviesAction);
 
         const allGenres = Array.from(new Set(res.data.flatMap((movie) => movie.genres)));
-        setAllGenres(allGenres);
+        setAllGenres(allGenres.sort());
       })
       .catch((err) => console.log(err));
   }, []);

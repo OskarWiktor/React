@@ -193,21 +193,31 @@
   flex-direction: column;
   padding: 101px 2dvw 0px 2dvw;
   width: clamp(100px, 30%, 300px);
-  height: 100dvh;
   background-color: rgb(9, 9, 9);
 }
 .side-menu .side-menu--title {
   padding: 24px 12px 6px 12px;
   font: calc(0.9em + 0.4vw) "Noto Sans JP", sans-serif;
   color: rgb(224, 224, 224);
+  border-bottom: 1px solid rgb(157, 0, 0);
 }
-.side-menu .side-menu--list {
-  padding: 12px;
-}
-.side-menu .side-menu--list .side-menu--list__item {
-  padding: 2px 12px;
-  font: calc(0.8em + 0.2vw) "Noto Sans JP", sans-serif;
+.side-menu .side-menu--genres {
+  background-color: transparent;
+  outline: none;
+  border: none;
   color: rgb(224, 224, 224);
+  font: calc(0.8em + 0.2vw) "Noto Sans JP", sans-serif;
+  padding: 6px;
+  text-align: left;
+}
+.side-menu .side-menu--genres:hover {
+  cursor: pointer;
+  color: rgb(157, 0, 0);
+  font: bold calc(0.8em + 0.2vw) "Noto Sans JP", sans-serif;
+}
+.side-menu .side-menu--genres:focus {
+  color: rgb(157, 0, 0);
+  font: bold calc(0.8em + 0.2vw) "Noto Sans JP", sans-serif;
 }
 
 .movie-grid {
@@ -215,7 +225,7 @@
   width: 100%;
 }
 .movie-grid .movie-grid--title {
-  padding: 24px;
+  padding: 24px 24px 24px 0px;
   font: calc(1em + 0.6vw) "Noto Sans JP", sans-serif;
   color: rgb(224, 224, 224);
 }
@@ -246,14 +256,10 @@
 }
 @media screen and (max-width: 576px) {
   .movie-grid .movie-grid--wrapper {
-    grid-template-columns: repeat(1, 1fr);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-}
-.movie-grid .movie-grid--wrapper .movie-grid--test {
-  margin: auto;
-  width: 180px;
-  height: 240px;
-  background-color: black;
 }
 
 .navbar {
@@ -330,6 +336,7 @@
 
 .category-page--wrapper {
   display: flex;
+  margin-bottom: 48px;
 }
 
 body {
