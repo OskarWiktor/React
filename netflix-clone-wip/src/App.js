@@ -25,7 +25,7 @@ function App() {
   const [moviesGenreAction, setMoviesGenreAction] = useState([]);
 
   // Category page
-  const [allGenres, setAllGenres] = useState([])
+  const [allGenres, setAllGenres] = useState([]);
 
   // Single Movies pages
 
@@ -73,7 +73,9 @@ function App() {
         );
         setMoviesGenreAction(moviesAction);
 
-        const allGenres = Array.from(new Set(res.data.flatMap((movie) => movie.genres)));
+        const allGenres = Array.from(
+          new Set(res.data.flatMap((movie) => movie.genres))
+        );
         setAllGenres(allGenres.sort());
       })
       .catch((err) => console.log(err));
@@ -98,7 +100,6 @@ function App() {
     }
     return shuffledArray;
   };
-
   return (
     <>
       <Navbar />
@@ -119,10 +120,16 @@ function App() {
             />
           }
         ></Route>
-        <Route path="/category" element={<Category movies={movies} allGenres={allGenres}/>} />
+        <Route
+          path="/category"
+          element={<Category movies={movies} allGenres={allGenres} />}
+        />
         <Route path="/search" element={<Search />} />
         <Route path="/account" element={<Account />} />
-        <Route path="/:title" element={<SingleMovie />} />
+        <Route
+          path="/:formattedTitle"
+          element={<SingleMovie movies={movies} />}
+        />
       </Routes>
     </>
   );

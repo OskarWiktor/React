@@ -2,13 +2,8 @@ import PlayButton from "../../atoms/PlayButton/PlayButton";
 import LikeButton from "../../atoms/LikeButton/LikeButton";
 import {Link} from "react-router-dom";
 
-function MovieCard(props) {
-  const title = props.title;
-  const year = props.year;
-  const thumbnail = props.thumbnail;
-
-  const formattedTitle = title.replace(/\s+/g, "-");
-  
+function MovieCard({title, year, thumbnail}) {
+  const formattedTitle = title.toLowerCase().replace(/[^a-z0-9-]+/g, "-");
   return (
     <div className="movie-card">
       <div className="movie-card__thumbnail">

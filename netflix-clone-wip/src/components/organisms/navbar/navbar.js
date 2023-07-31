@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
 
-  //ToDo 1. React Router - other pages
-  //ToDo 2. MUI change to accent color on hover
   //ToDo 3. Search - animation on click giving input with white bg or/and other web page (I have to think about it)
   //ToDo 4. Navbar disappears on scroll down, appears on scroll up, with transition and opacity
 
