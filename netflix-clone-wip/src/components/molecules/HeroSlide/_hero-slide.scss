@@ -20,7 +20,7 @@
     );
     @media (max-width: 760px) {
       backdrop-filter: none;
-      background: rgba(0, 0, 0, 0.59);;
+      background: rgba(0, 0, 0, 0.59);
     }
     .hero-slide__text {
       width: clamp(300px, 50%, 600px);
@@ -46,6 +46,11 @@
         font: $text-normal;
         color: rgb(176, 176, 176);
         margin-top: 16px;
+        .hero-slide__text--read-more {
+          display: inline-flex;
+          font: $text-small;
+          color: $accent-color;
+        }
       }
       .hero-slide--icons {
         margin-top: 32px;
