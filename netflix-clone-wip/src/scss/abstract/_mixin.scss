@@ -4,3 +4,8 @@
   display: flex;
   margin: auto;
 }
+
+@mixin left-border {
+  padding-left: 10px;
+  border-left: 4px solid $accent-color;
+}

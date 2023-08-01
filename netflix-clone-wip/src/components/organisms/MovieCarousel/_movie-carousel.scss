@@ -5,9 +5,9 @@
   .movie-carousel--title--wrapper {
     @include wrapper;
     .movie-carousel--title {
+      @include left-border;
       font: $text-big;
       color: $almost-white;
-      border-bottom: 1px solid $accent-color;
     }
   }
   .movie-carousel--wrapper {

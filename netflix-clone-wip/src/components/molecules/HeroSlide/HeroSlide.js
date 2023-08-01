@@ -26,7 +26,7 @@ function HeroSlide(props) {
           <p className="hero-slide__text--description">
             {shortDescription(description)}
             <Link to={`/${formattedTitle}`}>
-              <p className="hero-slide__text--read-more">read more</p>
+              <span className="hero-slide__text--read-more">read more</span>
             </Link>
           </p>
           <div className="hero-slide--icons">

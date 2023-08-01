@@ -31,7 +31,7 @@ function SingleMovie({movies}) {
           <p className="single-movie-page--cast__title">Cast:</p>
           <div className="single-movie-page--cast__list">
             {movie.cast.map((cast) => (
-              <div className="cast--list-item">
+              <div key={cast} className="cast--list-item">
                 <div className="cast--list-item__fake-photo"></div>
                 <p className="cast--list-item__name">{cast}</p>
               </div>

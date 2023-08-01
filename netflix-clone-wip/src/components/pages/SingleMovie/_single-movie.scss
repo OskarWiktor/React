@@ -21,6 +21,7 @@
         rgba(24, 24, 24, 0) 50%,
         rgba(24, 24, 24, 1) 100%
       );
+      backdrop-filter: blur(10px);
     }
   }
   .single-movie-page--info__wrapper {
@@ -51,10 +52,10 @@
     .single-movie-page--cast {
       margin-top: 36px;
       .single-movie-page--cast__title {
+        @include left-border;
         display: inline;
         font: $second-heading;
         color: $almost-white;
-        border-bottom: 1px solid $accent-color;
       }
       .single-movie-page--cast__list {
         display: grid;
