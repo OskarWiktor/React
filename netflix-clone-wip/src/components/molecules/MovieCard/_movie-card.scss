@@ -3,6 +3,7 @@
   height: 240px;
   background-color: rgba(24, 24, 24, 0.772);
   position: relative;
+  margin: auto;
   &:hover .movie-card__on-hover {
     opacity: 1;
   }

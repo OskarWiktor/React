@@ -124,7 +124,7 @@ function App() {
           path="/category"
           element={<Category movies={movies} allGenres={allGenres} />}
         />
-        <Route path="/search" element={<Search />} />
+        <Route path="/search" element={<Search movies={movies}/>} />
         <Route path="/account" element={<Account />} />
         <Route
           path="/:formattedTitle"
