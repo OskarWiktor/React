@@ -28,31 +28,74 @@
     flex-direction: column;
     padding: 24px;
     .single-movie-page--info {
-
-        .single-movie-page--info__genres {
-            margin-top: 12px;
-            font: $text-small;
-            color: rgb(176, 176, 176);
-        }
-        .single-movie-page--info__title {
-            margin-top: 16px;
-            font: $main-heading;
-            color: $almost-white;
-        }
-        .single-movie-page--info__year {
-            font: $text-small;
-            color: rgb(176, 176, 176);
-        }
-        .single-movie-page--info__description {
-            margin-top: 24px;
-            font: $text-normal;
-            color: rgb(176, 176, 176);
-        }
-    }
-    .single-movie-page--cast {
+      .single-movie-page--info__genres {
         margin-top: 12px;
+        font: $text-small;
+        color: rgb(176, 176, 176);
+      }
+      .single-movie-page--info__title {
+        margin-top: 16px;
+        font: $main-heading;
+        color: $almost-white;
+      }
+      .single-movie-page--info__year {
+        font: $text-small;
+        color: rgb(176, 176, 176);
+      }
+      .single-movie-page--info__description {
+        margin-top: 24px;
         font: $text-normal;
         color: rgb(176, 176, 176);
+      }
+    }
+    .single-movie-page--cast {
+      margin-top: 36px;
+      .single-movie-page--cast__title {
+        display: inline;
+        font: $second-heading;
+        color: $almost-white;
+        border-bottom: 1px solid $accent-color;
+      }
+      .single-movie-page--cast__list {
+        display: grid;
+        gap: 1vw;
+        grid-template-columns: repeat(6, 1fr);
+        @media screen and (max-width: 1420px) {
+          grid-template-columns: repeat(5, 1fr);
+        }
+
+        @media screen and (max-width: 1200px) {
+          grid-template-columns: repeat(4, 1fr);
+        }
+
+        @media screen and (max-width: 992px) {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media screen and (max-width: 768px) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media screen and (max-width: 576px) {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .cast--list-item {
+          padding: 12px;
+          .cast--list-item__fake-photo {
+            margin-top: 16px;
+            width: 180px;
+            height: 240px;
+            background-color: black;
+          }
+          .cast--list-item__name {
+            padding-top: 8px;
+            font: $text-small;
+            color: $almost-white;
+          }
+        }
+      }
     }
   }
 }

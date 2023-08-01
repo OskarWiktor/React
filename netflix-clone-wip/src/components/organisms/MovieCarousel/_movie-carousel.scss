@@ -7,6 +7,7 @@
     .movie-carousel--title {
       font: $text-big;
       color: $almost-white;
+      border-bottom: 1px solid $accent-color;
     }
   }
   .movie-carousel--wrapper {

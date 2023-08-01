@@ -23,10 +23,20 @@ function SingleMovie({movies}) {
           <p className="single-movie-page--info__genres">{movie.genres}</p>
           <h1 className="single-movie-page--info__title">{movie.title}</h1>
           <p className="single-movie-page--info__year">{movie.year}</p>
-          <p className="single-movie-page--info__description">{movie.extract}</p>
+          <p className="single-movie-page--info__description">
+            {movie.extract}
+          </p>
         </div>
         <div className="single-movie-page--cast">
-          <p>{movie.cast}</p>
+          <p className="single-movie-page--cast__title">Cast:</p>
+          <div className="single-movie-page--cast__list">
+            {movie.cast.map((cast) => (
+              <div className="cast--list-item">
+                <div className="cast--list-item__fake-photo"></div>
+                <p className="cast--list-item__name">{cast}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
