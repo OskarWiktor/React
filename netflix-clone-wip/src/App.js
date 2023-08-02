@@ -27,8 +27,16 @@ function App() {
   // Category page
   const [allGenres, setAllGenres] = useState([]);
 
-  // Single Movies pages
+  // Account page
+  const [likedMovies, setLikedMovies] = useState([]);
 
+  const handleLikeButton = (title) => {
+    const movie = movies.find((movie) => movie.title === title);
+    if(movie) {
+      setLikedMovies((allLikedMovies) => [movie, ...allLikedMovies]);
+    }
+  }
+  console.log(likedMovies);
   useEffect(() => {
     axios
       .get("/db/movies.json")
@@ -117,18 +125,20 @@ function App() {
               moviesGenreFantasy={moviesGenreFantasy}
               moviesGenreSuperhero={moviesGenreSuperhero}
               moviesGenreAction={moviesGenreAction}
+              likedMovies={likedMovies}
+              handleLikeButton={handleLikeButton}
             />
           }
         ></Route>
         <Route
           path="/category"
-          element={<Category movies={movies} allGenres={allGenres} />}
+          element={<Category movies={movies} allGenres={allGenres} handleLikeButton={handleLikeButton} likedMovies={likedMovies}/>}
         />
-        <Route path="/search" element={<Search movies={movies}/>} />
-        <Route path="/account" element={<Account />} />
+        <Route path="/search" element={<Search movies={movies} handleLikeButton={handleLikeButton} likedMovies={likedMovies}/>} />
+        <Route path="/account" element={<Account movies={movies} likedMovies={likedMovies} />} />
         <Route
           path="/:formattedTitle"
-          element={<SingleMovie movies={movies} />}
+          element={<SingleMovie movies={movies} handleLikeButton={handleLikeButton} likedMovies={likedMovies}/>}
         />
       </Routes>
     </>

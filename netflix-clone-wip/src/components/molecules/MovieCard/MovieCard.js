@@ -2,8 +2,10 @@ import PlayButton from "../../atoms/PlayButton/PlayButton";
 import LikeButton from "../../atoms/LikeButton/LikeButton";
 import {Link} from "react-router-dom";
 
-function MovieCard({title, year, thumbnail}) {
+function MovieCard({title, year, thumbnail, onLike, isLiked}) {
+
   const formattedTitle = title.toLowerCase().replace(/[^a-z0-9-]+/g, "-");
+
   return (
     <div className="movie-card">
       <div className="movie-card__thumbnail">
@@ -22,7 +24,7 @@ function MovieCard({title, year, thumbnail}) {
           <Link to={`/${formattedTitle}`}>
             <PlayButton />
           </Link>
-          <LikeButton />
+          <LikeButton onClick={onLike} isLiked={isLiked}/>
         </div>
       </div>
     </div>

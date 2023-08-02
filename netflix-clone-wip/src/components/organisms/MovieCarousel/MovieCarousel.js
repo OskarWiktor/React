@@ -6,7 +6,7 @@ import "swiper/swiper.min.css";
 import "swiper/css";
 import "swiper/css/navigation";
 
-function MovieCarousel({movies, carouselTitle}) {
+function MovieCarousel({movies, carouselTitle, handleLikeButton, likedMovies}) {
   return (
     <section className="movie-carousel">
       <div className="movie-carousel--title--wrapper">
@@ -51,6 +51,10 @@ function MovieCarousel({movies, carouselTitle}) {
                 year={movies.year}
                 genre={movies.genres}
                 thumbnail={movies.thumbnail}
+                onLike={() => handleLikeButton(movies.title)}
+                isLiked={likedMovies.some(
+                  (likedMovies) => likedMovies.title === movies.title
+                )}
               />
             </SwiperSlide>
           ))}

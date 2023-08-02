@@ -1,7 +1,13 @@
 .like-btn {
-    display: flex;
-    background-color: transparent;
-    border: none;
-    padding: 4px 6px;
-    cursor: pointer;
+  display: flex;
+  background-color: transparent;
+  border: none;
+  padding: 4px 6px;
+  cursor: pointer;
+  .like-btn--icon {
+    color: rgb(162, 162, 162);
+  }
+  .like-btn--icon.liked {
+    color: $accent-color;
+  }
 }

@@ -53,12 +53,19 @@
   padding: 4px 6px;
   cursor: pointer;
 }
+.like-btn .like-btn--icon {
+  color: rgb(162, 162, 162);
+}
+.like-btn .like-btn--icon.liked {
+  color: rgb(157, 0, 0);
+}
 
 .movie-card {
   width: 180px;
   height: 240px;
   background-color: rgba(24, 24, 24, 0.772);
   position: relative;
+  margin: auto;
 }
 .movie-card:hover .movie-card__on-hover {
   opacity: 1;
@@ -486,11 +493,11 @@
 .search .search--movie-grid {
   display: grid;
   gap: 1vw;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(7, 1fr);
 }
 @media screen and (max-width: 1420px) {
   .search .search--movie-grid {
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(6, 1fr);
   }
 }
 @media screen and (max-width: 1200px) {
@@ -505,11 +512,53 @@
 }
 @media screen and (max-width: 768px) {
   .search .search--movie-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 @media screen and (max-width: 576px) {
   .search .search--movie-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.account {
+  padding: 101px 12px 12px 12px;
+}
+.account .account--title {
+  margin: 16px 0px;
+  padding: 0px 12px;
+  font: bold calc(1.4em + 0.8vw) "Noto Sans JP", sans-serif;
+  color: rgb(224, 224, 224);
+}
+.account .account--movie-grid {
+  display: grid;
+  gap: 1vw;
+  grid-template-columns: repeat(7, 1fr);
+}
+@media screen and (max-width: 1420px) {
+  .account .account--movie-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+@media screen and (max-width: 1200px) {
+  .account .account--movie-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+@media screen and (max-width: 992px) {
+  .account .account--movie-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (max-width: 768px) {
+  .account .account--movie-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 576px) {
+  .account .account--movie-grid {
     display: flex;
     flex-direction: column;
     align-items: center;

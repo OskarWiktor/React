@@ -1,7 +1,7 @@
-import { useState } from "react";
+import {useState} from "react";
 import MovieCard from "../../molecules/MovieCard/MovieCard";
 
-function Search({ movies }) {
+function Search({ movies, likedMovies, handleLikeButton }) {
   const [search, setSearch] = useState("");
 
   const filteredMovies = movies.filter((movie) =>
@@ -28,6 +28,8 @@ function Search({ movies }) {
               year={movie.year}
               genre={movie.genres}
               thumbnail={movie.thumbnail}
+              onLike={() => handleLikeButton(movies.title)}
+              isLiked={likedMovies.some((likedMovies) => likedMovies.title === movies.title)}
             />
           ))}
         </div>

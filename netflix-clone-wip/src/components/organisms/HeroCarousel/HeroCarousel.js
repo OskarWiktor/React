@@ -6,7 +6,7 @@ import "swiper/swiper.min.css";
 import "swiper/css";
 import "swiper/css/navigation";
 
-function HeroCarousel({randomMovies}) {
+function HeroCarousel({randomMovies, handleLikeButton}) {
   return (
     <section className="hero-carousel">
       <Swiper
@@ -27,6 +27,7 @@ function HeroCarousel({randomMovies}) {
               genres={movies.genres}
               thumbnail={movies.thumbnail}
               description={movies.extract}
+              onLike={() => handleLikeButton(movies.title)}
             />
           </SwiperSlide>
         ))}

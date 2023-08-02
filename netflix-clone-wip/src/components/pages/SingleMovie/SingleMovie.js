@@ -1,6 +1,6 @@
 import {useParams} from "react-router-dom";
 
-function SingleMovie({movies}) {
+function SingleMovie({ movies }) {
   const {formattedTitle} = useParams();
 
   const movie = movies.find(

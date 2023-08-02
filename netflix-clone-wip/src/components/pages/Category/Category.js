@@ -2,7 +2,7 @@ import SideMenu from "../../organisms/SideMenu/SideMenu";
 import MovieGrid from "../../organisms/MovieGrid/MovieGrid";
 import {useState} from "react";
 
-function Category({movies, allGenres}) {
+function Category({ movies, allGenres, handleLikeButton, likedMovies }) {
   const [selectedGenres, setSelectedGenres] = useState(null);
 
   const handleSelectedGenres = (genres) => {
@@ -17,7 +17,7 @@ function Category({movies, allGenres}) {
         allGenres={allGenres}
         handleSelectedGenres={handleSelectedGenres}
       />
-      <MovieGrid selectedGenres={selectedGenres} movies={selectedMovies} />
+      <MovieGrid selectedGenres={selectedGenres} movies={selectedMovies} handleLikeButton={handleLikeButton} likedMovies={likedMovies}/>
     </div>
   );
 }
