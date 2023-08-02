@@ -32,10 +32,20 @@ function App() {
 
   const handleLikeButton = (title) => {
     const movie = movies.find((movie) => movie.title === title);
-    if(movie) {
-      setLikedMovies((allLikedMovies) => [movie, ...allLikedMovies]);
+  
+    if (movie) {
+      if (likedMovies.some((likedMovie) => likedMovie.title === movie.title)) {
+        // Movie is already liked, remove it from the likedMovies array
+        setLikedMovies((prevLikedMovies) =>
+          prevLikedMovies.filter((likedMovie) => likedMovie.title !== movie.title)
+        );
+      } else {
+        // Movie is not liked yet, add it to the likedMovies array
+        setLikedMovies((prevLikedMovies) => [movie, ...prevLikedMovies]);
+      }
     }
-  }
+  };
+  
   console.log(likedMovies);
   useEffect(() => {
     axios
@@ -135,7 +145,7 @@ function App() {
           element={<Category movies={movies} allGenres={allGenres} handleLikeButton={handleLikeButton} likedMovies={likedMovies}/>}
         />
         <Route path="/search" element={<Search movies={movies} handleLikeButton={handleLikeButton} likedMovies={likedMovies}/>} />
-        <Route path="/account" element={<Account movies={movies} likedMovies={likedMovies} />} />
+        <Route path="/account" element={<Account movies={movies} handleLikeButton={handleLikeButton} likedMovies={likedMovies} />} />
         <Route
           path="/:formattedTitle"
           element={<SingleMovie movies={movies} handleLikeButton={handleLikeButton} likedMovies={likedMovies}/>}

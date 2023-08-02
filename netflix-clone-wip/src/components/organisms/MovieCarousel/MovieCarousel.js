@@ -47,7 +47,7 @@ function MovieCarousel({movies, carouselTitle, handleLikeButton, likedMovies}) {
           {movies.map((movies) => (
             <SwiperSlide key={movies.title + movies.year}>
               <MovieCard
-                title={movies.title}
+                title={movies.title + movies.year}
                 year={movies.year}
                 genre={movies.genres}
                 thumbnail={movies.thumbnail}

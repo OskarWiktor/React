@@ -4,8 +4,8 @@ import MovieCard from "../../molecules/MovieCard/MovieCard";
 function Search({ movies, likedMovies, handleLikeButton }) {
   const [search, setSearch] = useState("");
 
-  const filteredMovies = movies.filter((movie) =>
-    movie.title.toLowerCase().includes(search.toLowerCase())
+  const filteredMovies = movies.filter((movies) =>
+    movies.title.toLowerCase().includes(search.toLowerCase())
   );
 
   return (
@@ -21,13 +21,13 @@ function Search({ movies, likedMovies, handleLikeButton }) {
           />
         </div>
         <div className="search--movie-grid">
-          {filteredMovies.map((movie) => (
+          {filteredMovies.map((movies) => (
             <MovieCard
-              key={movie.title + movie.year}
-              title={movie.title}
-              year={movie.year}
-              genre={movie.genres}
-              thumbnail={movie.thumbnail}
+              key={movies.title + movies.year}
+              title={movies.title}
+              year={movies.year}
+              genre={movies.genres}
+              thumbnail={movies.thumbnail}
               onLike={() => handleLikeButton(movies.title)}
               isLiked={likedMovies.some((likedMovies) => likedMovies.title === movies.title)}
             />
