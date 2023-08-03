@@ -1,5 +1,5 @@
 function SideMenu({ allGenres, handleSelectedGenres }) {
-    return (
+  return (
     <aside className="side-menu">
       <h3 className="side-menu--title">Categories:</h3>
       {allGenres.map((genres) => (

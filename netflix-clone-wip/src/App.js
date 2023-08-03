@@ -30,6 +30,7 @@ function App() {
   // Account page
   const [likedMovies, setLikedMovies] = useState([]);
 
+  // favorite movies array
   const handleLikeButton = (title) => {
     const movie = movies.find((movies) => movies.title === title);
 
@@ -98,6 +99,7 @@ function App() {
       .catch((err) => console.log(err));
   }, []);
 
+  // random movies for hero slider
   useEffect(() => {
     if (movies.length > 0) {
       const shuffledMovies = shuffleArray(movies);

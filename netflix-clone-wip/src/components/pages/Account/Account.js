@@ -1,6 +1,6 @@
 import MovieCard from "../../molecules/MovieCard/MovieCard";
 
-function Account({ likedMovies, handleLikeButton }) {
+function Account({likedMovies, handleLikeButton}) {
   console.log(likedMovies);
 
   return (
@@ -15,7 +15,9 @@ function Account({ likedMovies, handleLikeButton }) {
             genre={movies.genres}
             thumbnail={movies.thumbnail}
             onLike={() => handleLikeButton(movies.title)}
-            isLiked={likedMovies.some((likedMovies) => likedMovies.title === movies.title)}
+            isLiked={likedMovies.some(
+              (likedMovies) => likedMovies.title === movies.title
+            )}
           />
         ))}
       </div>

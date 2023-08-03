@@ -1,6 +1,6 @@
 import MovieCard from "../../molecules/MovieCard/MovieCard";
 
-function MovieGrid({movies, selectedGenres, handleLikeButton, likedMovies}) {
+function MovieGrid({ movies, selectedGenres, handleLikeButton, likedMovies }) {
   return (
     <div className="movie-grid">
       <h1 className="movie-grid--title">

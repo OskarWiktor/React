@@ -1,11 +1,8 @@
 import SearchIcon from "@mui/icons-material/Search";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 function Navbar() {
-
-  //ToDo 3. Search - animation on click giving input with white bg or/and other web page (I have to think about it)
-  //ToDo 4. Navbar disappears on scroll down, appears on scroll up, with transition and opacity
 
   return (
     <section className="navbar">
@@ -17,7 +14,7 @@ function Navbar() {
         </h2>
         <nav className="navbar__nav">
           <ul className="navbar__nav--ul">
-          <li className="navbar__nav--li">
+            <li className="navbar__nav--li">
               <Link className="navbar__nav--link" to="/">
                 Home
               </Link>

@@ -6,7 +6,7 @@ import "swiper/swiper.min.css";
 import "swiper/css";
 import "swiper/css/navigation";
 
-function MovieCarousel({movies, carouselTitle, handleLikeButton, likedMovies}) {
+function MovieCarousel({ movies, carouselTitle, handleLikeButton, likedMovies }) {
   return (
     <section className="movie-carousel">
       <div className="movie-carousel--title--wrapper">

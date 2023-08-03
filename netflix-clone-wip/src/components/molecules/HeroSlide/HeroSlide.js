@@ -14,7 +14,6 @@ function HeroSlide(props) {
   };
 
   const genresWithSpace = genres.join(" ");
-
   const formattedTitle = title.toLowerCase().replace(/[^a-z0-9-]+/g, "-");
 
   return (
@@ -33,7 +32,7 @@ function HeroSlide(props) {
             <Link to={`/${formattedTitle}`}>
               <PlayButton>Play</PlayButton>
             </Link>
-            <LikeButton onClick={onLike} isLiked={isLiked}/>
+            <LikeButton onClick={onLike} isLiked={isLiked} />
           </div>
         </div>
 

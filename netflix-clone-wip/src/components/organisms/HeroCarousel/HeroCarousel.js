@@ -28,7 +28,9 @@ function HeroCarousel({ randomMovies, handleLikeButton, likedMovies }) {
               thumbnail={movies.thumbnail}
               description={movies.extract}
               onLike={() => handleLikeButton(movies.title)}
-              isLiked={likedMovies.some((likedMovies) => likedMovies.title === movies.title)}
+              isLiked={likedMovies.some(
+                (likedMovies) => likedMovies.title === movies.title
+              )}
             />
           </SwiperSlide>
         ))}
