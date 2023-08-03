@@ -7,6 +7,7 @@ function SingleMovie({movies}) {
     (movie) =>
       movie.title.toLowerCase().replace(/[^a-z0-9-]+/g, "-") === formattedTitle
   );
+  const genresWithSpace = movie.genres.join(" ");
 
   return (
     <div className="single-movie-page--wrapper">
@@ -21,7 +22,7 @@ function SingleMovie({movies}) {
 
       <div className="single-movie-page--info__wrapper">
         <div className="single-movie-page--info">
-          <p className="single-movie-page--info__genres">{movie.genres}</p>
+          <p className="single-movie-page--info__genres">{genresWithSpace}</p>
           <h1 className="single-movie-page--info__title">{movie.title}</h1>
           <p className="single-movie-page--info__year">{movie.year}</p>
           <p className="single-movie-page--info__description">

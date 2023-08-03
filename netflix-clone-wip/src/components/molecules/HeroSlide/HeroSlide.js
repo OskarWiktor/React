@@ -22,12 +22,14 @@ function HeroSlide(props) {
         <div className="hero-slide__text">
           <p className="hero-slide__text--genre">{genresWithSpace}</p>
           <h2 className="hero-slide__text--title">{title}</h2>
-          <p className="hero-slide__text--description">
-            {shortDescription(description)}
-            <Link to={`/${formattedTitle}`}>
-              <span className="hero-slide__text--read-more">read more</span>
-            </Link>
-          </p>
+          {description && (
+            <p className="hero-slide__text--description">
+              {shortDescription(description)}
+              <Link to={`/${formattedTitle}`}>
+                <span className="hero-slide__text--read-more">read more</span>
+              </Link>
+            </p>
+          )}
           <div className="hero-slide--icons">
             <Link to={`/${formattedTitle}`}>
               <PlayButton>Play</PlayButton>

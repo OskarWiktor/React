@@ -177,8 +177,6 @@ function App() {
           element={
             <SingleMovie
               movies={movies}
-              handleLikeButton={handleLikeButton}
-              likedMovies={likedMovies}
             />
           }
         />
