@@ -3,7 +3,7 @@ import PlayButton from "../../atoms/PlayButton/PlayButton";
 import {Link} from "react-router-dom";
 
 function HeroSlide(props) {
-  const {title, genres, thumbnail, description, onLike} = props;
+  const {title, genres, thumbnail, description, onLike, isLiked} = props;
 
   const shortDescription = (description) => {
     const maxLength = 200;
@@ -33,7 +33,7 @@ function HeroSlide(props) {
             <Link to={`/${formattedTitle}`}>
               <PlayButton>Play</PlayButton>
             </Link>
-            <LikeButton onClick={onLike}/>
+            <LikeButton onClick={onLike} isLiked={isLiked}/>
           </div>
         </div>
 

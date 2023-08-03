@@ -12,24 +12,63 @@ function Home({
   moviesGenreSuperhero,
   moviesGenreAction,
   handleLikeButton,
-  likedMovies
+  likedMovies,
 }) {
   return (
     <div className="App">
-      <HeroCarousel randomMovies={randomMovies} />
-      <MovieCarousel carouselTitle={"Movies from 2023"} movies={movies2023} handleLikeButton={handleLikeButton} likedMovies={likedMovies}/>
-      <MovieCarousel carouselTitle={"Horror"} movies={moviesGenreHorror} handleLikeButton={handleLikeButton} likedMovies={likedMovies}/>
-      <MovieCarousel carouselTitle={"Comedy"} movies={moviesGenreComedy} handleLikeButton={handleLikeButton} likedMovies={likedMovies}/>
-      <MovieCarousel carouselTitle={"Thriller"} movies={moviesGenreThriller} handleLikeButton={handleLikeButton} likedMovies={likedMovies}/>
-      <MovieCarousel carouselTitle={"Animated"} movies={moviesGenreAnimated} handleLikeButton={handleLikeButton} likedMovies={likedMovies}/>
-      <MovieCarousel carouselTitle={"Fantasy"} movies={moviesGenreFantasy} handleLikeButton={handleLikeButton} likedMovies={likedMovies}/>
+      <HeroCarousel
+        randomMovies={randomMovies}
+        handleLikeButton={handleLikeButton}
+        likedMovies={likedMovies}
+      />
+      <MovieCarousel
+        carouselTitle={"Movies from 2023"}
+        movies={movies2023}
+        handleLikeButton={handleLikeButton}
+        likedMovies={likedMovies}
+      />
+      <MovieCarousel
+        carouselTitle={"Horror"}
+        movies={moviesGenreHorror}
+        handleLikeButton={handleLikeButton}
+        likedMovies={likedMovies}
+      />
+      <MovieCarousel
+        carouselTitle={"Comedy"}
+        movies={moviesGenreComedy}
+        handleLikeButton={handleLikeButton}
+        likedMovies={likedMovies}
+      />
+      <MovieCarousel
+        carouselTitle={"Thriller"}
+        movies={moviesGenreThriller}
+        handleLikeButton={handleLikeButton}
+        likedMovies={likedMovies}
+      />
+      <MovieCarousel
+        carouselTitle={"Animated"}
+        movies={moviesGenreAnimated}
+        handleLikeButton={handleLikeButton}
+        likedMovies={likedMovies}
+      />
+      <MovieCarousel
+        carouselTitle={"Fantasy"}
+        movies={moviesGenreFantasy}
+        handleLikeButton={handleLikeButton}
+        likedMovies={likedMovies}
+      />
       <MovieCarousel
         carouselTitle={"Superhero"}
         movies={moviesGenreSuperhero}
         handleLikeButton={handleLikeButton}
         likedMovies={likedMovies}
       />
-      <MovieCarousel carouselTitle={"Action"} movies={moviesGenreAction} handleLikeButton={handleLikeButton} likedMovies={likedMovies}/>
+      <MovieCarousel
+        carouselTitle={"Action"}
+        movies={moviesGenreAction}
+        handleLikeButton={handleLikeButton}
+        likedMovies={likedMovies}
+      />
     </div>
   );
 }
