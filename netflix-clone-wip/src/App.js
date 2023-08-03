@@ -31,22 +31,21 @@ function App() {
   const [likedMovies, setLikedMovies] = useState([]);
 
   const handleLikeButton = (title) => {
-    const movie = movies.find((movie) => movie.title === title);
-  
-    if (movie) {
-      if (likedMovies.some((likedMovie) => likedMovie.title === movie.title)) {
-        // Movie is already liked, remove it from the likedMovies array
+    const movie = movies.find((movies) => movies.title === title);
+
+    if (movies) {
+      if (likedMovies.some((likedMovie) => likedMovie.title === movies.title)) {
         setLikedMovies((prevLikedMovies) =>
-          prevLikedMovies.filter((likedMovie) => likedMovie.title !== movie.title)
+          prevLikedMovies.filter(
+            (likedMovie) => likedMovie.title !== movies.title
+          )
         );
       } else {
-        // Movie is not liked yet, add it to the likedMovies array
         setLikedMovies((prevLikedMovies) => [movie, ...prevLikedMovies]);
       }
     }
   };
-  
-  console.log(likedMovies);
+
   useEffect(() => {
     axios
       .get("/db/movies.json")
@@ -142,13 +141,44 @@ function App() {
         ></Route>
         <Route
           path="/category"
-          element={<Category movies={movies} allGenres={allGenres} handleLikeButton={handleLikeButton} likedMovies={likedMovies}/>}
+          element={
+            <Category
+              movies={movies}
+              allGenres={allGenres}
+              handleLikeButton={handleLikeButton}
+              likedMovies={likedMovies}
+            />
+          }
         />
-        <Route path="/search" element={<Search movies={movies} handleLikeButton={handleLikeButton} likedMovies={likedMovies}/>} />
-        <Route path="/account" element={<Account movies={movies} handleLikeButton={handleLikeButton} likedMovies={likedMovies} />} />
+        <Route
+          path="/search"
+          element={
+            <Search
+              movies={movies}
+              handleLikeButton={handleLikeButton}
+              likedMovies={likedMovies}
+            />
+          }
+        />
+        <Route
+          path="/account"
+          element={
+            <Account
+              movies={movies}
+              handleLikeButton={handleLikeButton}
+              likedMovies={likedMovies}
+            />
+          }
+        />
         <Route
           path="/:formattedTitle"
-          element={<SingleMovie movies={movies} handleLikeButton={handleLikeButton} likedMovies={likedMovies}/>}
+          element={
+            <SingleMovie
+              movies={movies}
+              handleLikeButton={handleLikeButton}
+              likedMovies={likedMovies}
+            />
+          }
         />
       </Routes>
     </>
