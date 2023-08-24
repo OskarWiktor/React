@@ -1,6 +1,6 @@
 import FavoriteIcon from "@mui/icons-material/Favorite";
 
-function LikeButton({ onClick, isLiked, children }) {
+function LikeButton({ onClick, isLiked }) {
   const handleLikeClicked = () => {
     onClick();
   };

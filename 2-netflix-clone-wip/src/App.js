@@ -35,10 +35,10 @@ function App() {
     const movie = movies.find((movies) => movies.title === title);
 
     if (movies) {
-      if (likedMovies.some((likedMovie) => likedMovie.title === movies.title)) {
+      if (likedMovies.some((likedMovies) => likedMovies.title === movies.title)) {
         setLikedMovies((prevLikedMovies) =>
           prevLikedMovies.filter(
-            (likedMovie) => likedMovie.title !== movies.title
+            (likedMovies) => likedMovies.title !== movies.title
           )
         );
       } else {
@@ -177,6 +177,7 @@ function App() {
           element={
             <SingleMovie
               movies={movies}
+
             />
           }
         />
