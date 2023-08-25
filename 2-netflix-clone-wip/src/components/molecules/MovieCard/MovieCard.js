@@ -2,17 +2,21 @@ import PlayButton from "../../atoms/PlayButton/PlayButton";
 import LikeButton from "../../atoms/LikeButton/LikeButton";
 import {Link} from "react-router-dom";
 
-function MovieCard({ title, year, thumbnail, onLike, isLiked }) {
+function MovieCard({title, year, thumbnail, onLike, isLiked}) {
   const formattedTitle = title.toLowerCase().replace(/[^a-z0-9-]+/g, "-");
 
   return (
     <div className="movie-card">
       <div className="movie-card__thumbnail">
-        <img
-          alt={`${title} movie from ${year}`}
-          className="movie-card__thumbnail--img"
-          src={thumbnail}
-        />
+        {thumbnail ? (
+          <img
+            alt={`${title} movie from ${year}`}
+            className="movie-card__thumbnail--img"
+            src={thumbnail}
+          />
+        ) : (
+          <div></div>
+        )}
       </div>
       <div className="movie-card__on-hover">
         <div className="movie-card__text">
