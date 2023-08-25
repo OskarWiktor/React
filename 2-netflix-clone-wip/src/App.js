@@ -32,13 +32,13 @@ function App() {
 
   // favorite movies array
   const handleLikeButton = (title) => {
-    const movie = movies.find((movies) => movies.title === title);
+    const movie = movies.find((movie) => movie.title === title);
 
-    if (movies) {
-      if (likedMovies.some((likedMovies) => likedMovies.title === movies.title)) {
+    if (movie) {
+      if (likedMovies.some((likedMovie) => likedMovie.title === movie.title)) {
         setLikedMovies((prevLikedMovies) =>
           prevLikedMovies.filter(
-            (likedMovies) => likedMovies.title !== movies.title
+            (likedMovie) => likedMovie.title !== movie.title
           )
         );
       } else {
@@ -177,7 +177,6 @@ function App() {
           element={
             <SingleMovie
               movies={movies}
-
             />
           }
         />
