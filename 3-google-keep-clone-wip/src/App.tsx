@@ -1,4 +1,5 @@
 function App() {
+  // 1.
   class Animal {
     name: string;
     age: number;
@@ -28,7 +29,32 @@ function App() {
   
   console.log(Beata, Beata.talk(), Beata.bio());
 
-  return <div className="App"></div>;
+
+  // 2. 
+  // Programowanie funkcyjne
+  //let baseSalary = 3000;
+  //let overtime =  10;
+  //let rate = 20;
+
+  //function getWage(baseSalary: number, overtime: number, rate: number) {
+  //  return baseSalary + (overtime * rate);
+  //}
+
+  // vs OOP
+  let employee = {
+    baseSalary: 3000,
+    overtime:  10,
+    rate: 20,
+    getWage: function() {
+      return this.baseSalary + (this.overtime * this.rate)
+    }
+  };
+
+  console.log(employee.getWage());
+
+  return <div className="App">
+    <p>{employee.getWage()}</p>
+  </div>;
 }
 
 export default App;
