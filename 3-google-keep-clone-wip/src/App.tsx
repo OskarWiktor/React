@@ -16,32 +16,31 @@ class Food {
 
 function App() {
   const [foodList, setFoodList] = useState<Food[]>([]);
-  const [inputName, setInputName] = useState<string>(" ");
-  const [inputCalories, setInputCalories] = useState<number>(Number);
-  const [inputWeight, setInputWeight] = useState<number>(Number);
+  const [inputName, setInputName] = useState(" ");
+  const [inputCalories, setInputCalories] = useState(" ");
+  const [inputWeight, setInputWeight] = useState(" ");
   const [selectedFood, setSelectedFood] = useState<Food | null>(null);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement>,
     inputType: string | number
   ) => {
-    const valueString: string = e.target.value;
-    const valueNumber: number = parseFloat(e.target.value);
+    const value: string = e.target.value;;
     if (inputType === "name") {
-      setInputName(valueString);
+      setInputName(value);
     } else if (inputType === "calories") {
-      setInputCalories(valueNumber);
+      setInputCalories(value);
     } else if (inputType === "weight") {
-      setInputWeight(valueNumber);
+      setInputWeight(value);
     }
   };
 
   const handleSubmit = () => {
-    const newFoodItem = new Food(inputName, inputCalories, inputWeight);
+    const newFoodItem = new Food(inputName, parseFloat(inputCalories), parseFloat(inputWeight));
     setFoodList([newFoodItem, ...foodList]);
     setInputName("");
-    setInputCalories(Number);
-    setInputWeight(Number);
+    setInputCalories("");
+    setInputWeight("");
   };
 
   const openModal = (food: Food) => {
