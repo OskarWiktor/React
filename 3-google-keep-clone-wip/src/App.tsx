@@ -1,60 +1,92 @@
+import {ReactEventHandler, useState} from "react";
+
+class Food {
+  name: string;
+  calories: number;
+  weight: number;
+  constructor(name: string, calories: number, weight: number) {
+    this.name = name;
+    this.calories = calories;
+    this.weight = weight;
+  }
+  info() {
+    return `${this.name} weighs ${this.weight} grams and has ${this.calories} calories.`;
+  }
+}
+
 function App() {
-  // 1.
-  class Animal {
-    name: string;
-    age: number;
-    constructor(name: string, age: number) {
-      this.name = name;
-      this.age = age;
-    }
-    walk() {
-      return `${this.name} is walking`;
-    }
-  }
-  class Human extends Animal {
-    genre: string;
-    constructor(name: string, age: number, genre: string) {
-      super(name, age);
-      this.genre = genre;
-    }
-    bio() {
-      return `My name is ${this.name} and I am ${this.age} old ${this.genre}`;
-    }
-    talk() {
-      return `${this.age} old ${this.name} is talking: `;
-    }
-  }
+  const [foodList, setFoodList] = useState<Food[]>([]);
+  const [inputName, setInputName] = useState<string>(" ");
+  const [inputCalories, setInputCalories] = useState<number>(Number);
+  const [inputWeight, setInputWeight] = useState<number>(Number);
+  const [selectedFood, setSelectedFood] = useState<Food | null>(null);
 
-  let Beata = new Human("Beata", 62, "woman");
-  
-  console.log(Beata, Beata.talk(), Beata.bio());
-
-
-  // 2. 
-  // Programowanie funkcyjne
-  //let baseSalary = 3000;
-  //let overtime =  10;
-  //let rate = 20;
-
-  //function getWage(baseSalary: number, overtime: number, rate: number) {
-  //  return baseSalary + (overtime * rate);
-  //}
-
-  // vs OOP
-  let employee = {
-    baseSalary: 3000,
-    overtime:  10,
-    rate: 20,
-    getWage: function() {
-      return this.baseSalary + (this.overtime * this.rate)
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    inputType: string | number
+  ) => {
+    const valueString: string = e.target.value;
+    const valueNumber: number = parseFloat(e.target.value);
+    if (inputType === "name") {
+      setInputName(valueString);
+    } else if (inputType === "calories") {
+      setInputCalories(valueNumber);
+    } else if (inputType === "weight") {
+      setInputWeight(valueNumber);
     }
   };
 
-  console.log(employee.getWage());
+  const handleSubmit = () => {
+    const newFoodItem = new Food(inputName, inputCalories, inputWeight);
+    setFoodList([newFoodItem, ...foodList]);
+    setInputName("");
+    setInputCalories(Number);
+    setInputWeight(Number);
+  };
 
-  return <div className="App">
-    <p>{employee.getWage()}</p>
-  </div>;
+  const openModal = (food: Food) => {
+    setSelectedFood(food)
+  }
+  const closeModal = () => {
+    setSelectedFood(null)
+  }
+
+
+  return (
+    <div className="App">
+      <input
+        type="text"
+        placeholder="name"
+        value={inputName}
+        onChange={(e) => handleInputChange(e, "name")}
+      />
+      <input
+        type="number"
+        placeholder="calories"
+        value={inputCalories}
+        onChange={(e) => handleInputChange(e, "calories")}
+      />
+      <input
+        type="number"
+        placeholder="weight"
+        value={inputWeight}
+        onChange={(e) => handleInputChange(e, "weight")}
+      />
+      <button onClick={handleSubmit}>Submit</button>
+
+      <ul>
+        {foodList.map((food, index) => (
+          <li key={index} onClick={() => openModal(food)}>{food.name}</li>
+        ))}
+      </ul>
+      {selectedFood && (
+        <div>
+          <span onClick={closeModal}>&times;</span>
+          <p>{selectedFood.info()}</p>
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default App;
